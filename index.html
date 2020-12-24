@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+<!-- Balises de base -->
+        <title>Ohmyfood!</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="Commande de repas en ligne"/>
+        <meta name="keywords" content="repas, menus, commande, food, restaurants"/>
+        <meta name="robots" content="index, follow"/>
+        <meta name="identifier-url" content="http://ohmyfood.com"/>
+        <meta name="reply-to" content="ohmyfood@gmail.com"/>
+        <meta name="author" content="Jessica G"/>
+<!-- Style -->
+        <link rel="stylesheet" href="style.css"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/fb81eeb658.js" crossorigin="anonymous"></script>
+<!-- Balises réseaux sociaux -->
+    <!-- Balises Facebook -->
+        <meta property="og:title" content="Oh my food!"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="http://www.ohmyfood.com"/>
+        <meta property="og:description" content="Réservez votre repas en ligne facilement"/>
+        <meta property="og:image" content=""/>
+    <!-- Balises Twitter -->
+        <meta property="twitter:title" content="Oh my food!"/>
+        <meta property="twitter:site" content="@ohmyfood"/>
+        <meta property="twitter:creator" content="@ohmyfood"/>
+        <meta property="twitter:description" content="Réservez votre repas en ligne facilement"/> 
+        <meta property="twitter:image" content=""/>
+    </head>
+    
+    
+    <body>
+<!-- Header -->
+        <header>
+            <img src="MaquettesOhmyfood/images/logo/ohmyfood.png" alt="logo de la compagnie" class="logo logo_header"/>
+        </header>
+        
+<!-- 1ère section - présentation du site -->        
+        <section id="section1">
+            <form method="post" action="page.php">
+                <i class="fas fa-map-marker-alt"></i><input type="search" value="Paris, Belleville" class="srch"/>
+            </form>
+            <h1>Réservez le menu qui vous convient</h1>
+            <h3>Découvrez des restaurants d'exceptions, sélectionnés par nos soins.</h3>
+            <button type="button" class="btn btn-s1" value="Explorer nos restaurants">Explorer nos restaurants</button>
+        </section>
+        
+<!-- 2eme section - fonctionnement du site -->
+        <section id="section2">
+            <h2>Fonctionnement</h2>
+            <div class="liste_instructions">
+                <div class="instructions">
+                    <p class="numbers">1</p>
+                    <div class="instructions box">
+                        <i class="fas fa-mobile-alt"></i>
+                        <p>Choisissez un restaurant</p>
+                    </div>
+                </div>
+                <div class="instructions">
+                    <p class="numbers">2</p>
+                    <div class="instructions box">
+                        <i class="fas fa-list-ul"></i>
+                        <p>Composez votre menu</p>
+                    </div>
+                </div>
+                <div class="instructions">
+                    <p class="numbers">3</p>
+                    <div class="instructions box">
+                        <i class="fas fa-store"></i>
+                        <p>Dégustez au restaurant</p>
+                    </div> 
+                </div>
+            </div>
+        </section>
+        
+<!-- 3eme section - les restaurants -->        
+        <section id="articles">
+            <h2>Restaurants</h2>
+            
+    <!-- Palette du goût -->
+            <article class="carte">
+                <a href="lapalettedugout.html">
+                    <div class="img_resto">
+                        <div class="new">Nouveau</div>
+                        <img src="MaquettesOhmyfood/images/palettev2.jpg" alt="image du restaurant La palette du goût" class="img_a"/>
+                    </div>
+                    <div class="txt">
+                        <h4>La palette du goût</h4>
+                        <div class="like">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <p>Ménilmontant</p>
+                    </div>
+                </a>
+             </article>
+            
+   <!-- Note enchantée -->
+            <article class="carte">
+                <a href=noteenchantee.html>
+                    <div class="img_resto">
+                        <div class="new">Nouveau</div>
+                        <img src ="MaquettesOhmyfood/images/notev2.jpg" alt="image du restaurant La note enchantée" class="img_a"/>
+                    </div>
+                    <div class="txt">
+                        <h4>La note enchantée</h4>
+                        <div class="like">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <p>Charonne</p>
+                    </div>
+                </a>
+            </article>
+            
+    <!-- A la française -->
+            <div class="carte">
+                <a href="alafrancaise.html">
+                    <img src="MaquettesOhmyfood/images/francaisev2.jpg" alt="image du restaurant A la française" class="img_a"/>
+                    <div class="txt">
+                        <h4>À la française</h4>
+                        <div class="like">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <p>Cité Rouge</p>
+                    </div>
+                </a>
+            </div>
+            
+      <!-- Délice des sens -->
+            <div class="carte">
+                <a href="delicedessens.html">
+                    <img src="MaquettesOhmyfood/images/delicev2.jpg" alt="image du restaurant Le délice des sens" class="img_a"/>
+                    <div class="txt">
+                        <h4>Le délice des sens</h4>
+                        <div class="like">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <p>Folie-Méricourt</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+<!-- Footer -->
+        <footer>
+            <h2>ohmyfood</h2>
+            <div class="liens_footer">
+                <div class="icones_footer">
+                    <i class="fas fa-utensils"></i>
+                    <a href="#">Proposer un restaurant</a>
+                </div>
+                <div class="icones_footer">
+                    <i class="fas fa-hands-helping"></i>
+                    <a href="#">Devenir partenaire</a>
+                </div>
+                <a href="#">Mentions légales</a>
+                <a href="mailto:ohmyfood@gmail.com">Contact</a>
+            </div>
+        </footer>
+    </body>
+</html>
