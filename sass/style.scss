@@ -24,6 +24,68 @@ footer h2{
     font-family: Shrikhand;
 }
 
+
+/*------ LOADER ------*/
+
+#loader {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+    height: 100%;
+    margin: auto;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+    top: 0; left: 0; right:0; bottom: 0;
+    font-family: Shrikhand;
+    flex-direction: column;
+    text-shadow: 2px 2px 0px $color-secondary;
+}
+
+/*-- animation texte */
+
+#message{
+    font-size: 1.5em;
+    animation: txt 1.5s;
+    -webkit-animation: txt 1.5s;
+    -o-animation: txt 1.5s;
+    -ms-animation: txt 1.5s;
+    -moz-animation: txt 1.5s;
+}
+
+@keyframes txt{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+/*-- animation logo */
+
+#loader .fas{
+    font-size: 3em;
+    color: $color-tertiary;
+    animation: loader infinite;
+    padding: 0.5em;
+    border: 0.1em dotted $color-primary;
+    border-radius: 3em;
+    animation: loader 1.5s infinite;
+    -webkit-animation: loader 1.5s infinite;
+    -o-animation: loader 1.5s infinite;
+    -ms-animation: loader 1.5s infinite;
+    -moz-animation: loader 1.5s infinite;
+}
+
+@-webkit-keyframes loader{
+    0%{
+        transform: rotate(0deg) scale(0);    
+    }    
+    100%{
+        transform: rotate(360deg) scale(1);    
+    }
+}
 /*----- HEADER ------*/
 
 header{
@@ -143,6 +205,11 @@ h1, h3{
     font-weight: 600;
     width: 5em;
     text-align: center;
+    float: right;
+    margin-right: 1em;
+    margin-top: 1.5em;
+    position: relative;
+    margin-bottom: -3em;
 }
 
 #articles .img_a{
@@ -176,14 +243,14 @@ h1, h3{
     margin: 0.5em;
 }
 
-#articles .far{
+.far{
     float: right;
     font-size: 1.5em;
     padding-right: 1em;
     &:hover{
         transform: scale(1.5);
         transform-origin: bottom;
-        background: linear-gradient(left bottom,from($color-primary),to($color-secondary));
+        background-color: linear-gradient(left bottom,from($color-primary),to($color-secondary));
         transition: transform 400ms ease-in-out;
     }
 }
@@ -224,6 +291,11 @@ footer .fas{
     color: white;
     margin-right: 0.5em;
     font-size: 0.8em;
+    padding-bottom: 0.5em;
+}
+
+body > footer > div > div:nth-child(1) > i{
+    padding-right: 0.5em;
 }
 
 footer .icones_footer{
@@ -234,11 +306,40 @@ footer .icones_footer{
 /*------ PAGES ANNEXES ------*/
 /*---------------------------*/
 
-.pages{
-    color:black;
-    font-family: Shrikhand;
+article{
+    margin: 1em;
 }
 
+.h1_pages, .h2_pages, .h3_pages{
+    text-align: start;
+    font-size: 1em;
+}
+
+.h1_pages{
+    color:black;
+    font-family: Shrikhand;
+    font-size: 2em;
+}
+
+.h2_pages{
+    font-weight: 100;
+    border-bottom: $color-tertiary solid 0.5em;
+
+}
+
+.plats{
+    border-radius: 1em;
+    box-shadow: 0.2em 0.2em 0.5em #C9C9C9;
+
+}
+
+.plats_txt{
+    flex-direction: row;
+}
+
+.prix{
+    font-weight: 600;
+}
 
 /*-------------------------*/
 /*------ RESPONSIVE ------*/
