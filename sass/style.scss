@@ -8,6 +8,8 @@ body{
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
+$box-shadow: 0.2em 0.2em 0.5em #C9C9C9;
+
 
 
 /*----------------------------*/
@@ -47,6 +49,7 @@ footer h2{
 #message{
     font-size: 1.5em;
     animation: txt 1.5s;
+    color: $color-primary;
     -webkit-animation: txt 1.5s;
     -o-animation: txt 1.5s;
     -ms-animation: txt 1.5s;
@@ -54,10 +57,10 @@ footer h2{
 }
 
 @keyframes txt{
-    0%{
+    from{
         transform: scale(0);
     }
-    100%{
+    to{
         transform: scale(1);
     }
 }
@@ -79,11 +82,11 @@ footer h2{
 }
 
 @-webkit-keyframes loader{
-    0%{
-        transform: rotate(0deg) scale(0);    
-    }    
-    100%{
-        transform: rotate(360deg) scale(1);    
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
     }
 }
 /*----- HEADER ------*/
@@ -138,6 +141,8 @@ h1, h3{
     font-weight: 100;
 }
 
+/*--- boutons ---*/
+
 .btn{
     background: linear-gradient($color-secondary, $color-primary);
     color: white;
@@ -146,8 +151,17 @@ h1, h3{
     padding: 1em;
     font-size: 1em;
     width: 14em;
-    box-shadow: 0.2em 0.2em 0.5em #C9C9C9;
+    box-shadow: $box-shadow;
     margin: 1em;
+}
+
+@keyframes btn{
+    from{
+        
+    }
+    to{
+        
+    }
 }
 
 
@@ -186,7 +200,7 @@ h1, h3{
 }
 
 #section2 .box{
-    box-shadow: 0.2em 0.2em 0.5em #C9C9C9;
+    box-shadow: $box-shadow;
     border-radius: 1em;
     padding-left: 1em;
     width: 80%;
@@ -222,7 +236,7 @@ h1, h3{
 
 #articles .carte{
     border-radius: 1em;
-    box-shadow: 0.2em 0.2em 0.5em #C9C9C9;
+    box-shadow: $box-shadow;
     margin-bottom: 0.5em;
 }
 
@@ -247,10 +261,13 @@ h1, h3{
     float: right;
     font-size: 1.5em;
     padding-right: 1em;
-    &:hover{
+    &:active{
         transform: scale(1.5);
         transform-origin: bottom;
-        background-color: linear-gradient(left bottom,from($color-primary),to($color-secondary));
+        background-clip: unset;
+        background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         transition: transform 400ms ease-in-out;
     }
 }
@@ -306,40 +323,107 @@ footer .icones_footer{
 /*------ PAGES ANNEXES ------*/
 /*---------------------------*/
 
-article{
+.header_pages{
     margin: 1em;
 }
 
-.h1_pages, .h2_pages, .h3_pages{
+.header_pages a{
+    text-decoration: none;
+    color: black;
+    margin-right: 0.5em;
+}
+
+.art{
+    margin: 1em;
+}
+
+.img_pages{
+    object-fit: cover;
+    width: 100%;
+    height: 20em;
+}
+
+.h1_pages, .h2_pages, .h3_pages, p{
     text-align: start;
-    font-size: 1em;
+    margin-bottom: 0em;
+    margin-top: 0.5em;
+    padding-left: 0.3em;
 }
 
 .h1_pages{
     color:black;
     font-family: Shrikhand;
-    font-size: 2em;
+    font-size: 1.5em;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+.far_pages{
+    margin-top: -1em;
 }
 
 .h2_pages{
     font-weight: 100;
-    border-bottom: $color-tertiary solid 0.5em;
+    margin-bottom: 0em;
+    font-size: 1.1em;
+}
 
+.h3_pages{
+    font-size: 1.1em;
+}
+
+.p_pages{
+    font-size: 1em;
+}
+
+.line{
+    width: 2.5em;
+    border: solid $color-tertiary;
+    margin: 0em;
+    margin-left: 0.5em;
+}
+
+.titre_pages{
+    display: inline;
+    margin: 1em;
 }
 
 .plats{
     border-radius: 1em;
-    box-shadow: 0.2em 0.2em 0.5em #C9C9C9;
-
+    padding: 0.5em;
+    box-shadow: $box-shadow;
+    margin-bottom: 0.5em;
+    overflow: hidden;
 }
 
 .plats_txt{
-    flex-direction: row;
+    display: inline-block;
 }
 
 .prix{
     font-weight: 600;
 }
+
+$num-menus: 3;
+$anim-dur: 2s;
+$anim-delay: $anim-dur / $num-menus;
+
+.menu{
+    margin-bottom: 2.5em;
+    animation: menus 2s backwards;
+    animation-delay: $anim-delay;
+}
+
+@keyframes menus{
+    from{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
 
 /*-------------------------*/
 /*------ RESPONSIVE ------*/
