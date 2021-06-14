@@ -1,378 +1,528 @@
-body{ 
-    margin:0;
-    padding: 0;
-    width: 100%;
-    height: 100vh;
-}
-
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
-$box-shadow: 0.2em 0.2em 0.5em #C9C9C9;
+$grey-background:#f7f6f6;
+$grey-search:#e4e2e2;
+$box-shadow-btn: 0em 0.2em 0.5em 0px #9c9999;
+$box-shadow:0.1em 0.5em 1em #d4d4d4;
+$margin-sections : 1em;
+$linear-gradient : linear-gradient($color-secondary, $color-primary);
 
+@import "libs/mixins.scss";
 
+  /* ---------------------------------------------------------------- */
+ /* ----------------------------BODY-------------------------------- */
+/* ---------------------------------------------------------------- */
 
-/*----------------------------*/
-/*------ PAGE D'ACCUEIL ------*/
-/*---------------------------*/
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2; 
+  position: relative;
+}
+
+  /*-------------------------------*/
+ /*------ PAGE D'ACCUEIL I8 ------*/
+/*-------------------------------*/
 
 /*------ Polices ------*/
-
-h1, h2, h3, h4, p, a, .btn, .srch{
-    font-family: Roboto;
+h1, h2, h3, h4, p, a, .btn, .srch {
+    font-family: Roboto; 
 }
 
-footer h2{
-    font-family: Shrikhand;
+h1, h2, h3, h4{
+    font-weight: bold;
 }
 
+footer h2, .logo{
+    font-family: Shrikhand; 
+}
 
-/*------ LOADER ------*/
-
-#loader {
-	align-items: center;
-	display: flex;
-	justify-content: center;
-	width: 100%;
-    height: 100%;
-    margin: auto;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.7);
-    top: 0; left: 0; right:0; bottom: 0;
-    font-family: Shrikhand;
+/*----- LOADER ------*/ 
+.loader{
+    display: flex;
     flex-direction: column;
-    text-shadow: 2px 2px 0px $color-secondary;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 1;
+    animation: loader 2s forwards;
+    animation-delay: 4000ms;
+    @include webkit_animation;
+
 }
 
-/*-- animation texte */
-
-#message{
-    font-size: 1.5em;
-    animation: txt 1.5s;
-    color: $color-primary;
-    -webkit-animation: txt 1.5s;
-    -o-animation: txt 1.5s;
-    -ms-animation: txt 1.5s;
-    -moz-animation: txt 1.5s;
-}
-
-@keyframes txt{
-    from{
-        transform: scale(0);
-    }
-    to{
+@keyframes loader{
+    0%{
         transform: scale(1);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(0);
+        opacity: 0;
     }
 }
 
-/*-- animation logo */
-
-#loader .fas{
-    font-size: 3em;
-    color: $color-tertiary;
-    animation: loader infinite;
-    padding: 0.5em;
-    border: 0.1em dotted $color-primary;
-    border-radius: 3em;
-    animation: loader 1.5s infinite;
-    -webkit-animation: loader 1.5s infinite;
-    -o-animation: loader 1.5s infinite;
-    -ms-animation: loader 1.5s infinite;
-    -moz-animation: loader 1.5s infinite;
+.loader_txt{
+    font-family: Shrikhand;
+    color:$color-primary;
+    align-self: center;
+    text-shadow: 0em 1.7em 0em $color-secondary;
+    border-bottom: 0.2em dotted;
+    border-color: $color-tertiary;
+    font-size: 2em;
+    animation: loader_txt 4s;
+    @include webkit_animation;
 }
 
-@-webkit-keyframes loader{
+@keyframes loader_txt{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.loader .fa-utensils{
+    color:$color-tertiary;
+    text-shadow: 0.1em 0em 0em $color-primary;
+    font-size: 3em;
+    align-self: center;
+    margin-bottom: 0.5em;
+    border: 0.2em double;
+    border-color: $color-secondary;
+    border-radius: 1.5em;
+    padding: 0.4em;
+    padding-right: 0.5em;
+    animation: ustensils 3s infinite;
+    @include webkit_animation;
+}
+
+@keyframes ustensils{
     from{
         transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(180deg);
     }
     to{
         transform: rotate(360deg);
     }
 }
-/*----- HEADER ------*/
 
-header{
-    margin: 1em;
+/*--- Boutons ---*/
+.btn {
+        background: $linear-gradient;
+        color: white;
+        border-radius: 2em;
+        border: none;
+        padding: 1em;
+        font-size: 1em;
+        width: 14em;
+        box-shadow: $box-shadow-btn;
+        margin: 1em;
+        align-self: center;
+        &:hover{
+            opacity: 0.8;
+            box-shadow: 0em 0.2em 1em 1px #5e5d5d;
+        }
 }
 
-header img{
-    width: 10em;
+  /* ---------------------------------------------------------------- */
+ /* ----------------------------HEADER-------------------------------- */
+/* ---------------------------------------------------------------- */
+header {
+    margin: $margin-sections;
 }
 
-/*------ PRESENTATION ------*/
+header .logo {
+    font-size:2em;
+    margin: 0;
+    text-align: center;
+    animation: loader_txt 4s backwards;
+    animation-delay: 5s;
+    @include webkit_animation;
+}
+
+  /* ---------------------------------------------------------------- */
+ /* ----------------------------SECTION 1--------------------------- */
+/* ---------------------------------------------------------------- */
+
 #section1{
-    display: flex;
-    flex-direction: column;
-    margin:1em
+    animation: menus 2s backwards;
+    animation-delay: 5s;
+    @include webkit_animation;
 }
 
-#section1 form{
-    box-shadow: 0px 2px 5px grey inset;
+#section1 form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     color: black;
     text-align: center;
-    padding-left: 3.5em;
-    background-color: #EFEFEF;
-    margin-left: -2em;
-    margin-right: -2em;
+    padding: 1em;
+    padding-left: 5em;
+    background-color:$grey-search;
+    border-top-color: rgb(61, 61, 61);
 }
 
-#section1 fas{
-    margin-right: 1em;
+#section1 fas {
+    margin-right: 1em; 
 }
 
-#section1 .srch{
+#section1 .srch {
     border: none;
-    padding-left: 0.5em;
+    padding-left: 1em;
     font-size: 1em;
-    background-color: #EFEFEF;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    background-color: $grey-search;
+}  
+
+#presentation{
+    background-color: $grey-background;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 1em;
+    padding-bottom: 3em;
 }
 
-h1, h3{
+h1, h3 {
     font-size: 1.5em;
     color: black;
-    text-align: center;
+    text-align: center; 
 }
 
-#section1 h3{
+#section1 h1{
+    margin-bottom: 0em;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 1.5em;
+}
+
+#section1 h3 {
     color: grey;
     font-size: 1em;
-    font-weight: 100;
-}
-
-/*--- boutons ---*/
-
-.btn{
-    background: linear-gradient($color-secondary, $color-primary);
-    color: white;
-    border-radius: 2em;
-    border: none;
-    padding: 1em;
-    font-size: 1em;
-    width: 14em;
-    box-shadow: $box-shadow;
-    margin: 1em;
-}
-
-@keyframes btn{
-    from{
-        
-    }
-    to{
-        
-    }
+    font-weight: 100; 
 }
 
 
-/*------ FONCTIONNEMENT ------*/
-
-#section2{
-    margin: 1em;
+  /* ---------------------------------------------------------------- */
+ /* --------------------------SECTION 2----------------------------- */
+/* ---------------------------------------------------------------- */
+#section2 {
+    margin: $margin-sections;
+    animation: menus 2s backwards;
+    animation-delay: 5s;
+    @include webkit_animation; 
 }
 
-#section2 .liste_instructions{
+#section2 .liste_instructions {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
 }
 
-#section2 .numbers{
+#section2 .numbers {
     color: white;
     border: 0.5em $color-primary solid;
     background-color: $color-primary;
-    border-radius: 1em;
+    border-radius: 2em; 
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    text-align: center;
+    margin-right: -1.5em;
+    margin-top: 1.8em;
+    font-size: 0.8em;
+    height: fit-content;
+    position: sticky;
 }
 
-#section2 .fas{
-    margin-right: 1em;
+#section2 .fas {
     color: grey;
-    padding-top: 1em;
+    padding: 1em;
+    font-size: 1.1em;
+    padding-left: 2em; 
 }
 
-#section2 > div > div:nth-child(3) > div > i{
-    color: $color-primary;
+#section2 p{
+    font-weight: bold;
+    padding-left: 0.5em;
 }
 
-#section2 .instructions{
+#section2 > div > div:nth-child(3) > div > i {
+    color: $color-primary; 
+}
+
+#section2 .instructions {
     display: flex;
     flex-direction: row;
     margin-bottom: 1.5em;
 }
 
-#section2 .box{
+#section2 .box {
     box-shadow: $box-shadow;
+    background-color: $grey-background;
     border-radius: 1em;
     padding-left: 1em;
-    width: 80%;
+    padding-top: 1em;
+    padding: 0.5em;
+    width: 100%;
 }
 
-/*------ RESTAURANTS ------*/
+#section2 > div > div:nth-child(3) > div{
+    background-color: #f3edfb;
+}
 
-#articles{
+  /* ---------------------------------------------------------------- */
+ /* -------------------------SECTION 3------------------------------ */
+/* ---------------------------------------------------------------- */
+#articles {
+    background-color: $grey-background;
     padding: 1em;
+    padding-bottom: 2.5em;
+    animation: menus 2s backwards;
+    animation-delay: 6s;
+    @include webkit_animation;
 }
 
-#articles a .new{
+/*---Etiquette Nouveau---*/
+#articles a .new {
     background-color: $color-tertiary;
-    color: darken($color-tertiary,40);
+    color: #278870;
     padding: 0.5em;
     font-weight: 600;
     width: 5em;
-    text-align: center;
+    text-align: center; 
+    position: sticky;
     float: right;
+    z-index: 1;
     margin-right: 1em;
-    margin-top: 1.5em;
-    position: relative;
-    margin-bottom: -3em;
+    margin-bottom: -5em;
+    margin-top: 1em;
 }
 
-#articles .img_a{
+/*---Aperçus des restaurants---*/
+.img_resto {
+    position: relative;
+    width: 100%;
+    height: 68.5%;
+}  
+
+#articles .img_a {
     height: 10em;
     width: 100%;
     object-fit: cover;
     border-top-left-radius: 1em;
-    border-top-right-radius: 1em;
+    border-top-right-radius: 1em; 
 }
 
-#articles .carte{
+#articles .carte {
     border-radius: 1em;
     box-shadow: $box-shadow;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em; 
+    background-color: white;
 }
 
-#articles a{
+#articles a {
     text-decoration: none;
     color: black;
-    border-bottom: 0;
+    border-bottom: 0; 
 }
 
-#articles h4{
+#articles h4 {
     font-weight: 600;
     font-size: 1em;
     margin: 0em;
-    padding-left: 0.5em;
+    padding-left: 0.5em; 
 }
 
-#articles p{
-    margin: 0.5em;
+#articles p {
+    margin: 0.5em; 
 }
 
-.far{
+#articles .txt {
+    padding: 0.5em; 
+}
+
+  /*--------------------------------*/
+ /*-------- Animation Coeur -------*/
+/*--------------------------------*/
+
+/*---Coeur vide---*/
+.like {
     float: right;
     font-size: 1.5em;
-    padding-right: 1em;
-    &:active{
+    padding-right: 1em; 
+    margin-top: -0.5em;
+    position: relative;
+    z-index: 1;
+    &:hover{
+        color: white;
+    }
+}
+
+/*---Coeur plein---*/
+.full-like{
+    z-index: 2;
+    color: white;
+    padding-right: 0em;
+    z-index: 2;
+    &:hover{
         transform: scale(1.5);
         transform-origin: bottom;
         background-clip: unset;
         background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        transition: transform 400ms ease-in-out;
-    }
-}
-
-#articles .txt{
-    padding: 0.5em;
+        -webkit-transform: scale(1.5);
+        }
 }
 
 
-/*------ FOOTER ------*/
-footer{
+  /* ---------------------------------------------------------------- */
+ /* -----------------------------FOOTER----------------------------- */
+/* ---------------------------------------------------------------- */
+footer {
     background-color: #404040;
-    padding: 1.5em;
+    padding: 1.5em; 
+    padding-top: 0.5em;
 }
 
-footer h2{
+footer h2 {
     color: white;
     font-size: 1em;
     font-weight: 400;
-    margin-top: 0;
+    margin-top: 0; 
 }
 
-.liens_footer{
+/*---Liens---*/
+.liens_footer {
     display: flex;
     flex-direction: column;
     margin-top: 1em;
-    padding-bottom: 0.5em;
 }
 
-footer a{
+footer a {
     text-decoration: none;
-    color: white; 
+    color: white;
     padding-bottom: 0.5em;
-    font-family: Roboto;
+    font-family: Roboto; 
 }
 
-footer .fas{
+footer > div > div:nth-child(2) > a{
+    padding-left: 0.2em;
+}
+
+footer > div > div:nth-child(1) > a{
+    padding-left: 0.5em;
+}
+
+/*---Icones---*/
+footer .fas {
     color: white;
     margin-right: 0.5em;
-    font-size: 0.8em;
+    font-size: 0.8em; 
+}
+
+footer .icones_footer {
+    display: inline; 
     padding-bottom: 0.5em;
 }
 
-body > footer > div > div:nth-child(1) > i{
-    padding-right: 0.5em;
+  /* ---------------------------------------------------------------- */
+ /* -----------------------PAGES ANNEXES---------------------------- */
+/* ---------------------------------------------------------------- */
+.pages {
+    color: black;
+    font-family: Roboto; 
 }
 
-footer .icones_footer{
-    display: inline;
-}
-
-/*----------------------------*/
-/*------ PAGES ANNEXES ------*/
-/*---------------------------*/
-
+/*---Header---*/
 .header_pages{
-    margin: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo_pages{
+    font-family: Shrikhand;
+    font-size: 1.5em;
+    margin: 0em;
 }
 
 .header_pages a{
     text-decoration: none;
     color: black;
     margin-right: 0.5em;
+    &:hover{
+        color: $color-tertiary;
+    }
 }
-
-.art{
-    margin: 1em;
-}
-
+        
 .img_pages{
     object-fit: cover;
     width: 100%;
-    height: 20em;
+    height: 15em;
 }
 
-.h1_pages, .h2_pages, .h3_pages, p{
-    text-align: start;
-    margin-bottom: 0em;
-    margin-top: 0.5em;
-    padding-left: 0.3em;
+/*---Corps de Page---*/
+.bloc_pages{
+    margin-top: -3em;
+    padding-bottom: 4em;
+    background-color: white;
+    position: relative;
+    border-radius: 2em;
+    background-color: $grey-background;
+}
+
+.titre_pages{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.5em;
 }
 
 .h1_pages{
     color:black;
     font-family: Shrikhand;
-    font-size: 1.5em;
-    border-top-left-radius: 1em;
-    border-top-right-radius: 1em;
+    font-size: 1.8em;
+    padding-left: 0.5em;
 }
-.far_pages{
-    margin-top: -1em;
+
+.like_pages{
+    margin-top: 1em;
+    font-size: 1.5em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+}
+
+/*---Menus---*/
+
+.menu_complet{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.h2_pages, .h3_pages{
+    text-align: start;
+    font-size: 1.1em;
+    margin-bottom: 0em;
+    margin-top: 0.5em;
+    padding-left: 0.3em;
 }
 
 .h2_pages{
     font-weight: 100;
-    margin-bottom: 0em;
-    font-size: 1.1em;
-}
-
-.h3_pages{
-    font-size: 1.1em;
-}
-
-.p_pages{
-    font-size: 1em;
 }
 
 .line{
@@ -380,55 +530,220 @@ footer .icones_footer{
     border: solid $color-tertiary;
     margin: 0em;
     margin-left: 0.5em;
-}
-
-.titre_pages{
-    display: inline;
-    margin: 1em;
+    margin-bottom: 1.5em;
+    margin-top: 0.5em;
 }
 
 .plats{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     border-radius: 1em;
-    padding: 0.5em;
     box-shadow: $box-shadow;
+    padding: 0.5em;
     margin-bottom: 0.5em;
     overflow: hidden;
+    background-color: white;   
 }
 
-.plats_txt{
-    display: inline-block;
+.plats_description{
+    margin-right: 1em;
+    padding-left:0.3em;
+    width: 100%; 
+}
+
+.plats_description p{
+    margin-bottom:0.5em;
+    margin-top: 0.5em;
+    padding-left: 0.3em;
 }
 
 .prix{
-    font-weight: 600;
+    font-weight: bold;
 }
 
-$num-menus: 3;
-$anim-dur: 2s;
-$anim-delay: $anim-dur / $num-menus;
+/*---Bouton de commande---*/
+.btn_pageannexe{
+    display: flex;
+    justify-content: center;
+}
 
+
+  /*--------------------------------*/
+ /*--- Animations Pages Annexes ---*/
+/*--------------------------------*/
+    
+/*---Apparition des menus---*/
 .menu{
+    margin-right: 1em;
+    margin-left: 1em;
     margin-bottom: 2.5em;
+}
+ 
+.entree{
     animation: menus 2s backwards;
-    animation-delay: $anim-delay;
+    transition: 2s;
+
+}
+
+.pprincipal{
+    animation: menus 2s backwards;
+    transition: 2s;
+    animation-delay: 1s;
+}
+
+.dessert{
+    animation: menus 2s backwards;
+    transition: 2s;
+    animation-delay: 2s;
 }
 
 @keyframes menus{
-    from{
+     from{
         transform: translateY(100px);
         opacity: 0;
-    }
-    to{
+     }
+     to{
         transform: translateY(0px);
         opacity: 1;
     }
 }
 
+/*---Coche de sélection---*/
 
-/*-------------------------*/
-/*------ RESPONSIVE ------*/
-/*-----------------------*/
+.fa-check-circle{
+    color:white;
+    background-color: $color-tertiary;
+    height: fit-content;
+    font-size: 2em;
+    float: right;
+}
 
-/*------ TABLETTE ------*/
+.plats{
+    &:active .prix_validation span{
+        transform: translate(-2em,0), rotate(360deg);
+    }
+    &:active .prix_validation{
+        transform: translate(-3em,0);
+    }
+    &:active .prix{
+        transform: translate(-3em, 0);
+    }
+    &:active .p_pages{
+        width: 65%;
+    }
+    &:active h3{
+        width: 65%;
+    }
+}
 
-/*------ PC ------*/
+.tarif{
+    transform-origin: 100% 0;
+    transition: transform 400ms ease-in-out;
+}
+
+  /* ---------------------------------------------------------------- */
+ /* ----------------------------RESPONSIVE-------------------------- */
+/* ---------------------------------------------------------------- */
+ 
+  /* ---------------------------------------------------------------- */
+ /* ------------------RESPONSIVE PETITE TABLETTE------------------- */ 
+/* ---------------------------------------------------------------- */
+@media only screen
+    and (min-width : 480px)
+    and (max-width: 540px){
+}
+
+
+  /* ---------------------------------------------------------------- */
+ /* -----------------------RESPONSIVE TABLETTE---------------------- */ 
+/* ---------------------------------------------------------------- */
+@media only screen
+   and (min-width : 541px)
+   and (max-width : 959px){
+}
+
+  /* ---------------------------------------------------------------- */
+ /* ---------RESPONSIVE TABLETTE PAYSAGE ET PETITS ECRANS PC-------- */
+/* ---------------------------------------------------------------- */
+@media only screen
+  and (min-width : 960px)
+    and (max-width : 1280px){
+}
+
+ /* ---------------------------------------------------------------- */
+ /* ----------------------RESPONSIVE DESKTOP------------------------ */
+/* ---------------------------------------------------------------- */
+@media screen and (min-width: 1281px){
+
+/*---SECTION 2---*/
+
+#section2 h2{
+    margin-left: 1.5em;
+}
+
+#section2 .liste_instructions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#section2 p{
+    padding-right: 1em;
+}
+
+/*---RESTAURANTS---*/
+#articles h2{
+    margin-left: 1.5em;
+}
+
+#articles .carte{
+    width: 45%;
+    margin-bottom: 3em;
+    margin: 1em;
+}
+
+#liste_restaurants{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    margin: 2em;
+}
+
+/*---FOOTER---*/
+
+footer{
+    padding-top: 1.5em;
+}
+
+.liens_footer{
+    align-items: center;
+}
+
+footer h2{
+    text-align: center;
+}
+
+/*---PAGES ANNEXES---*/
+
+.titre_pages{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.h2_pages{
+    padding-left: 0em;
+}
+
+.line{
+    margin-left: 0em;
+}
+
+.menu_complet{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+}

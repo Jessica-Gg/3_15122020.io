@@ -1,0 +1,6 @@
+@mixin webkit_animation{
+    -webkit-transition: 3s -webkit-transform;      
+   -moz-transition: 3s -mos-transform;
+    -ms-transition: 3s -ms-transform;
+   -o-transition: 3s -o-transform;   
+}
