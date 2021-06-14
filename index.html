@@ -37,17 +37,15 @@
     <body>
         
 <!-- Loader -->
-    <div id="loader">
-        <div class="load">
-            <i class="fas fa-utensils"></i>
-        </div>
-        <div id="message">OhMyfood !</div>
+    <div class="loader">
+        <i class="fas fa-utensils"></i>
+        <span class="loader_txt">OhMyfood !</span>
     </div>
         
         
 <!-- Header -->
-        <header>
-            <img src="MaquettesOhmyfood/images/logo/ohmyfood.png" alt="logo de la compagnie" class="logo logo_header"/>
+        <header class="header_accueil">
+            <p class="logo">ohmyfood</p>
         </header>
         
 <!-- 1ère section - présentation du site -->        
@@ -55,9 +53,11 @@
             <form method="post" action="page.php">
                 <i class="fas fa-map-marker-alt"></i><input type="search" value="Paris, Belleville" class="srch"/>
             </form>
-            <h1>Réservez le menu qui vous convient</h1>
-            <h3>Découvrez des restaurants d'exceptions, sélectionnés par nos soins.</h3>
-            <button type="button" class="btn btn-s1" value="Explorer nos restaurants">Explorer nos restaurants</button>
+            <div id="presentation">
+                <h1>Réservez le menu qui vous convient</h1>
+                <h3>Découvrez des restaurants d'exceptions, sélectionnés par nos soins.</h3>
+                <button type="button" class="btn btn-s1" value="Explorer nos restaurants">Explorer nos restaurants</button>
+            </div>
         </section>
         
 <!-- 2eme section - fonctionnement du site -->
@@ -91,13 +91,14 @@
 <!-- 3eme section - les restaurants -->        
         <section id="articles">
             <h2>Restaurants</h2>
-            
+          
+        <div id="liste_restaurants">
     <!-- Palette du goût -->
             <article class="carte">
                 <a href="lapalettedugout.html">
                     <div class="img_resto">
                         <div class="new">Nouveau</div>
-                        <img src="MaquettesOhmyfood/images/palettev2.jpg" alt="image du restaurant La palette du goût" class="img_a"/>
+                        <img src="images/restaurants/palettedugout.jpg" alt="image du restaurant La palette du goût" class="img_a"/>
                     </div>
                     <div class="txt">
                         <h4>La palette du goût</h4>
@@ -114,12 +115,15 @@
                 <a href="noteenchantee.html">
                     <div class="img_resto">
                         <div class="new">Nouveau</div>
-                        <img src ="MaquettesOhmyfood/images/notev2.jpg" alt="image du restaurant La note enchantée" class="img_a"/>
+                        <img src ="images/restaurants/noteenchantee.jpg" alt="image du restaurant La note enchantée" class="img_a"/>
                     </div>
                     <div class="txt">
                         <h4>La note enchantée</h4>
                         <div class="like">
                             <i class="far fa-heart"></i>
+                        </div>
+                        <div class="like full-like">
+                            <i class="fas fa-heart"></i>
                         </div>
                         <p>Charonne</p>
                     </div>
@@ -129,7 +133,7 @@
     <!-- A la française -->
             <div class="carte">
                 <a href="alafrancaise.html">
-                    <img src="MaquettesOhmyfood/images/francaisev2.jpg" alt="image du restaurant A la française" class="img_a"/>
+                    <img src="images/restaurants/alafrançaise.jpg" alt="image du restaurant A la française" class="img_a"/>
                     <div class="txt">
                         <h4>À la française</h4>
                         <div class="like">
@@ -143,7 +147,7 @@
       <!-- Délice des sens -->
             <div class="carte">
                 <a href="delicedessens.html">
-                    <img src="MaquettesOhmyfood/images/delicev2.jpg" alt="image du restaurant Le délice des sens" class="img_a"/>
+                    <img src="images/restaurants/delicedessens.jpg" alt="image du restaurant Le délice des sens" class="img_a"/>
                     <div class="txt">
                         <h4>Le délice des sens</h4>
                         <div class="like">
@@ -153,6 +157,7 @@
                     </div>
                 </a>
             </div>
+        </div>
         </section>
         
 <!-- Footer -->
