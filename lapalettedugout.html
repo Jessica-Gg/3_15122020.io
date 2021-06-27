@@ -39,7 +39,7 @@
             <div>
                 <a href="index.html" class="back"><i class="fas fa-arrow-left"></i></a>
             </div>
-            <div>
+            <div class="logo_txt">
                 <p class="logo_pages">ohmyfood</p>
             </div>
         </header>
@@ -47,11 +47,19 @@
 <!-- CORPS DE PAGE -->      
         <article class="art">
              <img src="images/restaurants/palettedugout.jpg" alt="image du restaurant La palette du goût" class="img_pages"/>
-            <div class="bloc_pages">
+             <div class="bloc_pages">
         <!--Nom du restau et like-->
                 <div class="titre_pages">
                     <h1 class="h1_pages">La palette du goût</h1>
-                    <i class="far fa-heart like_pages"></i>
+                    <input id="likes_pages" type="checkbox"/>
+                        <label for="likes_pages">
+                        <div class="no-like_pages">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <div class="no-like_pages full-like_pages">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        </label>
                 </div>
             
 <!-- MENU -->
@@ -62,138 +70,165 @@
                         <div class="line"></div>
             <!--Entrée 1-->
                             <div class="plats">
-                                <div class="plats_description">
-                                    <h3 class="h3_pages">Fricassée d'escargot</h3>
-                                    <p class="p_pages">Au piment d'espelette</p>
-                                </div>
-                                <div class="prix_validation">
-                                    <div class="prix__valid "></div>                        
-                                     <div class="tarif">                      
-                                        <p class="prix">25€</p>
-                                    </div> 
-                                    <span><i class="fas fa-check-circle"></i></span>
-                                </div>                                                             
+                                <input id="choix1" type="checkbox"/>
+                                <label for="choix1">
+                                    <div class="plats_description_prix">
+                                        <div class="plats_description">
+                                            <h3 class="h3_pages">Fricassée d'escargot</h3>
+                                            <p class="p_pages">Au piment d'espelette</p>
+                                        </div>
+                                        <div class="prix">25€</div>
+                                    </div>
+                                    <div class="validation">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                </label>                                                             
                             </div>
             <!--Entrée 2-->
                             <div class="plats">
-                                <div class="plats_description">
-                                    <h3 class="h3_pages">Foie gras de canard mi-cuit</h3>
-                                    <p class="p_pages">Et ses copeaux de truffe noire</p>
-                                </div>
-                                <div class="prix_validation">
-                                    <div class="tarif">                      
-                                        <p class="prix">35€</p>
-                                    </div> 
-                                    <span><i class="fas fa-check-circle"></i></span>
-                                </div>                                                             
+                                <input id="choix2" type="checkbox"/>
+                                <label for="choix2">
+                                    <div class="plats_description_prix">
+                                        <div class="plats_description">
+                                            <h3 class="h3_pages">Foie gras de canard mi-cuit</h3>
+                                            <p class="p_pages">Et ses copeaux de truffe noire</p>
+                                        </div>
+                                        <div class="prix">35€</div>
+                                    </div>
+                                    <div class="validation">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                </label>                                                             
                             </div>
             <!--Entrée 3-->
                             <div class="plats">
-                                <div class="plats_description">
-                                    <h3 class="h3_pages">Oeufs au plat</h3>
-                                    <p class="p_pages">Assaisonné à la truffe sur lit de...</p>
-                                </div>
-                                <div class="prix_validation">
-                                    <div class="tarif">                      
-                                        <p class="prix">20€</p>
+                                <input id="choix3" type="checkbox"/>
+                                <label for="choix3">
+                                    <div class="plats_description_prix">
+                                        <div class="plats_description">
+                                            <h3 class="h3_pages">Oeufs au plat</h3>
+                                            <p class="p_pages">Assaisonné à la truffe sur lit de caviard</p>
+                                        </div>
+                                        <div class="prix">20€</div>
                                     </div> 
-                                    <span><i class="fas fa-check-circle"></i></span>
-                                </div>                                                             
+                                    <div class="validation">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>                                                                                 
+                                </label>
                             </div>
                     </div>
-<!-- Plats -->
+            <!-- Plats -->
                     <div class="menu pprincipal">
                         <h2 class="h2_pages">PLATS</h2>
                         <div class="line"></div>
             <!--Plat 1-->
                             <div class="plats">
-                                <div class="plats_description">
-                                    <h3 class="h3_pages">Filet de boeuf aux herbes</h3>
-                                    <p class="p_pages">Accompagné de sa rimbambelle de légu...</p>
-                                </div>
-                                <div class="prix_validation">
-                                    <div class="tarif">                      
-                                        <p class="prix">40€</p>
+                                <input id="choix4" type="checkbox"/>
+                                <label for="choix4">
+                                    <div class="plats_description_prix">
+                                        <div class="plats_description">
+                                            <h3 class="h3_pages">Filet de boeuf aux herbes</h3>
+                                            <p class="p_pages">Accompagné de sa rimbambelle de légumes</p>
+                                        </div>
+                                        <div class="prix">40€</div>
                                     </div> 
-                                    <span><i class="fas fa-check-circle"></i></span>
-                                </div>                                                             
-                             </div>
-            <!--Plat 2-->
-                            <div class="plats">
-                                <div class="plats_description">
-                                    <h3 class="h3_pages">Parmentier de queue de boeuf</h3>
-                                    <p class="p_pages">A la truffe noire sur sa purée de panais</p>
-                                </div>
-                                <div class="prix_validation">
-                                    <div class="tarif">                      
-                                    <p class="prix">35€</p>
-                                    </div> 
-                                    <span><i class="fas fa-check-circle"></i></span>
-                                </div>                                                             
+                                    <div class="validation">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                </label>                                                           
                             </div>
-            <!--Plat 3-->
+                <!--Plat 2-->
                             <div class="plats">
-                                <div class="plats_description">
-                                    <h3 class="h3_pages">Filet de Turbot</h3>
-                                    <p class="p_pages">Aux agrumes</p>
-                                </div>
-                                <div class="prix_validation">
-                                    <div class="tarif">                      
-                                        <p class="prix">44€</p>
+                                <input id="choix5" type="checkbox"/>
+                                <label for="choix5">
+                                    <div class="plats_description_prix">
+                                        <div class="plats_description">
+                                            <h3 class="h3_pages">Parmentier de queue de boeuf</h3>
+                                            <p class="p_pages">A la truffe noire sur sa purée de panais</p>
+                                        </div>                      
+                                        <div class="prix">35€</div>
+                                    </div>
+                                    <div class="validation">
+                                        <i class="fas fa-check-circle"></i>
                                     </div> 
-                                    <span><i class="fas fa-check-circle"></i></span>
-                                </div>                                                             
+                                </label>
+                            </div>                                                             
+                 <!--Plat 3-->
+                            <div class="plats">
+                                <input id="choix6" type="checkbox"/>
+                                <label for="choix6">
+                                    <div class="plats_description_prix">
+                                        <div class="plats_description">
+                                            <h3 class="h3_pages">Filet de Turbot</h3>
+                                            <p class="p_pages">Aux agrumes</p>
+                                        </div>
+                                        <div class="prix">44€</div>
+                                    </div>
+                                    <div class="validation">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>   
+                                </label>                                                          
                             </div>
                     </div>
-<!-- Desserts -->
+                <!-- Desserts -->
                     <div class="menu dessert">
                         <h2 class="h2_pages">DESSERTS</h2>
                         <div class="line"></div>
-            <!--Dessert 1-->
+                <!--Dessert 1-->
                             <div class="plats">
-                                <div class="plats_description">
-                                    <h3 class="h3_pages">Paris-Brest</h3>
-                                    <p class="p_pages">Revisité</p>
-                                </div>
-                                <div class="prix_validation">
-                                    <div class="tarif">                      
-                                        <p class="prix">18€</p>
-                                    </div> 
-                                    <span><i class="fas fa-check-circle"></i></span>
-                                </div>                                                             
+                                <input id="choix7" type="checkbox"/>
+                                <label for="choix7">
+                                    <div class="plats_description_prix">
+                                        <div class="plats_description">
+                                            <h3 class="h3_pages">Paris-Brest</h3>
+                                            <p class="p_pages">Revisité</p>
+                                        </div>
+                                        <div class="prix">18€</div>
+                                    </div>
+                                    <div class="validation">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                </label>                                                             
                             </div>
-            <!--Dessert 2-->
+                <!--Dessert 2-->
                             <div class="plats">
-                                <div class="plats_description">
-                                    <h3 class="h3_pages">Macaron au chocolat d'exception</h3>
-                                    <p class="p_pages">Et glace à la vanille de Madagascar</p>
-                                </div>
-                                <div class="prix_validation">
-                                    <div class="tarif">                      
-                                        <p class="prix">22€</p>
+                                <input id="choix8" type="checkbox"/>
+                                <label for="choix8">
+                                    <div class="plats_description_prix">
+                                        <div class="plats_description">
+                                            <h3 class="h3_pages">Macaron au chocolat d'exception</h3>
+                                            <p class="p_pages">Et glace à la vanille de Madagascar</p>
+                                        </div>
+                                        <div class="prix">22€</div>
                                     </div> 
-                                    <span><i class="fas fa-check-circle"></i></span>
-                                </div>                                                             
+                                    <div class="validation">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div> 
+                                </label>                                                                    
                             </div>
-            <!--Dessert 3-->
+                <!--Dessert 3-->
                             <div class="plats">
-                                <div class="plats_description">
-                                    <h3 class="h3_pages">Mousse au chocolat</h3>
-                                    <p class="p_pages">Au  piment d'espelette et à la trusse noire</p>
-                                </div>
-                                <div class="prix_validation">
-                                    <div class="tarif">                      
-                                        <p class="prix">23€</p>
+                                <input id="choix9" type="checkbox"/>
+                                <label for="choix9">
+                                    <div class="plats_description_prix">
+                                        <div class="plats_description">
+                                            <h3 class="h3_pages">Mousse au chocolat</h3>
+                                            <p class="p_pages">Au  piment d'espelette et à la trusse noire</p>
+                                        </div>
+                                        <div class="prix">23€</div>
                                     </div> 
-                                    <span><i class="fas fa-check-circle"></i></span>
-                                </div>                                                             
-                            </div>
+                                    <div class="validation">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                </label>
+                            </div>                                                             
                     </div>
                 </div>
-<!-- Bouton commande -->
+    <!-- Bouton commande -->
                 <div class="btn_pageannexe">
                     <button type="button" value="Commander" class="btn btn_p">Commander</button>
-                </div>          
+                </div> 
+            </div>     
         </article>
         
 <!-- FOOTER -->

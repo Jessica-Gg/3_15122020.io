@@ -1,3 +1,7 @@
+  /*-------------------------------*/
+ /*---------- VARIABLES ----------*/
+/*-------------------------------*/
+
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
@@ -7,12 +11,14 @@ $box-shadow-btn: 0em 0.2em 0.5em 0px #9c9999;
 $box-shadow:0.1em 0.5em 1em #d4d4d4;
 $margin-sections : 1em;
 $linear-gradient : linear-gradient($color-secondary, $color-primary);
+$roboto-cie: Roboto, Arial, "Courier New", Verdana;
+$shrikhand-cie : Shrikhand, Arial, "Courier New", Verdana;
 
 @import "libs/mixins.scss";
 
   /* ---------------------------------------------------------------- */
  /* ----------------------------BODY-------------------------------- */
-/* ---------------------------------------------------------------- */
+/* -------------------site en mobile first (I8)-------------------- */
 
 body {
   margin: 0;
@@ -23,13 +29,13 @@ body {
   position: relative;
 }
 
-  /*-------------------------------*/
- /*------ PAGE D'ACCUEIL I8 ------*/
-/*-------------------------------*/
+  /* ---------------------------------------------------------------- */
+ /* -------------------------PAGE ACCUEIL--------------------------- */
+/* ---------------------------------------------------------------- */
 
 /*------ Polices ------*/
 h1, h2, h3, h4, p, a, .btn, .srch {
-    font-family: Roboto; 
+    font-family: $roboto-cie; 
 }
 
 h1, h2, h3, h4{
@@ -37,19 +43,21 @@ h1, h2, h3, h4{
 }
 
 footer h2, .logo{
-    font-family: Shrikhand; 
+    font-family: $shrikhand-cie; 
 }
 
-/*----- LOADER ------*/ 
+  /*-------------------------------*/
+ /*----------- LOADER ------------*/
+/*-------------------------------*/
 .loader{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: white;
+    background: rgba(255, 255, 255, 0.719) scroll no-repeat;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     animation: loader 2s forwards;
     animation-delay: 4000ms;
     @include webkit_animation;
@@ -68,7 +76,7 @@ footer h2, .logo{
 }
 
 .loader_txt{
-    font-family: Shrikhand;
+    font-family: $shrikhand-cie;
     color:$color-primary;
     align-self: center;
     text-shadow: 0em 1.7em 0em $color-secondary;
@@ -125,41 +133,37 @@ footer h2, .logo{
         border: none;
         padding: 1em;
         font-size: 1em;
-        width: 14em;
+        width: 12em;
         box-shadow: $box-shadow-btn;
         margin: 1em;
         align-self: center;
         &:hover{
             opacity: 0.8;
-            box-shadow: 0em 0.2em 1em 1px #5e5d5d;
+            box-shadow: 0em 0.2em 0.5em 0px #1a1919;
         }
 }
 
+.btn-s1{
+    width: 14em;
+}
+
   /* ---------------------------------------------------------------- */
- /* ----------------------------HEADER-------------------------------- */
+ /* ----------------------------HEADER------------------------------ */
 /* ---------------------------------------------------------------- */
 header {
-    margin: $margin-sections;
+    padding: 1em;
+   
 }
 
 header .logo {
     font-size:2em;
     margin: 0;
     text-align: center;
-    animation: loader_txt 4s backwards;
-    animation-delay: 5s;
-    @include webkit_animation;
 }
 
   /* ---------------------------------------------------------------- */
  /* ----------------------------SECTION 1--------------------------- */
 /* ---------------------------------------------------------------- */
-
-#section1{
-    animation: menus 2s backwards;
-    animation-delay: 5s;
-    @include webkit_animation;
-}
 
 #section1 form {
     display: flex;
@@ -171,11 +175,7 @@ header .logo {
     padding: 1em;
     padding-left: 5em;
     background-color:$grey-search;
-    border-top-color: rgb(61, 61, 61);
-}
-
-#section1 fas {
-    margin-right: 1em; 
+    box-shadow: 0px 3px 4px 0px #b5b5b5 inset;
 }
 
 #section1 .srch {
@@ -211,7 +211,8 @@ h1, h3 {
 #section1 h3 {
     color: grey;
     font-size: 1em;
-    font-weight: 100; 
+    font-weight: 100;
+    margin: 1em; 
 }
 
 
@@ -220,9 +221,7 @@ h1, h3 {
 /* ---------------------------------------------------------------- */
 #section2 {
     margin: $margin-sections;
-    animation: menus 2s backwards;
-    animation-delay: 5s;
-    @include webkit_animation; 
+    padding-top: 1em;
 }
 
 #section2 .liste_instructions {
@@ -238,8 +237,8 @@ h1, h3 {
     padding-left: 0.3em;
     padding-right: 0.3em;
     text-align: center;
-    margin-right: -1.5em;
-    margin-top: 1.8em;
+    margin-right: -1em;
+    margin-top: 2em;
     font-size: 0.8em;
     height: fit-content;
     position: sticky;
@@ -249,7 +248,7 @@ h1, h3 {
     color: grey;
     padding: 1em;
     font-size: 1.1em;
-    padding-left: 2em; 
+    padding-left: 1.5em; 
 }
 
 #section2 p{
@@ -270,15 +269,14 @@ h1, h3 {
 #section2 .box {
     box-shadow: $box-shadow;
     background-color: $grey-background;
-    border-radius: 1em;
+    border-radius: 1.5em;
     padding-left: 1em;
     padding-top: 1em;
-    padding: 0.5em;
+    padding: 0.8em;
     width: 100%;
-}
-
-#section2 > div > div:nth-child(3) > div{
-    background-color: #f3edfb;
+    &:hover{
+        background-color: #5b3a8321 ;
+    }
 }
 
   /* ---------------------------------------------------------------- */
@@ -288,9 +286,7 @@ h1, h3 {
     background-color: $grey-background;
     padding: 1em;
     padding-bottom: 2.5em;
-    animation: menus 2s backwards;
-    animation-delay: 6s;
-    @include webkit_animation;
+    padding-top: 2em;
 }
 
 /*---Etiquette Nouveau---*/
@@ -303,7 +299,6 @@ h1, h3 {
     text-align: center; 
     position: sticky;
     float: right;
-    z-index: 1;
     margin-right: 1em;
     margin-bottom: -5em;
     margin-top: 1em;
@@ -348,8 +343,8 @@ h1, h3 {
     margin: 0.5em; 
 }
 
-#articles .txt {
-    padding: 0.5em; 
+#articles .description {
+    padding: 0.5em;
 }
 
   /*--------------------------------*/
@@ -357,35 +352,69 @@ h1, h3 {
 /*--------------------------------*/
 
 /*---Coeur vide---*/
-.like {
+
+[id="likes"],
+[id="likes2"],
+[id="likes3"],
+[id="likes4"]{
+    float: right;
+    margin-top: -3em;
+    margin-right: 2.3em;
+    appearance: none;
+}
+
+[for="likes"],
+[for="likes2"],
+[for="likes3"],
+[for="likes4"]{
+.no-like {
     float: right;
     font-size: 1.5em;
-    padding-right: 1em; 
-    margin-top: -0.5em;
+    margin-right: 1em; 
+    margin-top: -2em;
     position: relative;
     z-index: 1;
-    &:hover{
-        color: white;
+}
+.full-like{
+    z-index: 2;
+    opacity: 0;
+    position: relative;
+}
+}
+
+/*--- Coeur plein ---*/
+
+[id="likes"]:checked +label,
+[id="likes2"]:checked +label,
+[id="likes3"]:checked +label,
+[id="likes4"]:checked +label{
+.no-like{
+    @include empty-heart_animation;
+}
+.full-like{
+    @include full-heart_animation;
+}
+}
+
+@keyframes vanish_coeur{
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(0);
+        opacity: 0;
     }
 }
 
-/*---Coeur plein---*/
-.full-like{
-    z-index: 2;
-    color: white;
-    padding-right: 0em;
-    z-index: 2;
-    &:hover{
-        transform: scale(1.5);
-        transform-origin: bottom;
-        background-clip: unset;
-        background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -webkit-transform: scale(1.5);
-        }
-}
-
+@keyframes remplissage_coeur{ 
+    0%{ 
+        transform: scale(0); 
+    } 
+    100%{ 
+        transform: scale(1); 
+    } 
+} 
 
   /* ---------------------------------------------------------------- */
  /* -----------------------------FOOTER----------------------------- */
@@ -393,12 +422,11 @@ h1, h3 {
 footer {
     background-color: #404040;
     padding: 1.5em; 
-    padding-top: 0.5em;
 }
 
 footer h2 {
     color: white;
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: 400;
     margin-top: 0; 
 }
@@ -414,7 +442,7 @@ footer a {
     text-decoration: none;
     color: white;
     padding-bottom: 0.5em;
-    font-family: Roboto; 
+    font-family: $roboto-cie; 
 }
 
 footer > div > div:nth-child(2) > a{
@@ -442,7 +470,7 @@ footer .icones_footer {
 /* ---------------------------------------------------------------- */
 .pages {
     color: black;
-    font-family: Roboto; 
+    font-family: $roboto-cie; 
 }
 
 /*---Header---*/
@@ -450,21 +478,24 @@ footer .icones_footer {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+}
+
+.logo_txt{
+    width: 100%;
 }
 
 .logo_pages{
-    font-family: Shrikhand;
-    font-size: 1.5em;
+    font-family: $shrikhand-cie;
+    font-size: 2em;
     margin: 0em;
+    text-align: center;
 }
 
 .header_pages a{
     text-decoration: none;
     color: black;
     margin-right: 0.5em;
-    &:hover{
-        color: $color-tertiary;
-    }
 }
         
 .img_pages{
@@ -483,6 +514,7 @@ footer .icones_footer {
     background-color: $grey-background;
 }
 
+/*---Titre Page---*/
 .titre_pages{
     display: flex;
     flex-direction: row;
@@ -492,17 +524,47 @@ footer .icones_footer {
 
 .h1_pages{
     color:black;
-    font-family: Shrikhand;
+    font-family: $shrikhand-cie;
     font-size: 1.8em;
     padding-left: 0.5em;
 }
 
-.like_pages{
-    margin-top: 1em;
-    font-size: 1.5em;
-    padding-right: 1em;
-    padding-top: 0.5em;
-}
+  /*--------------------------------*/
+ /*-------- Animation Coeur -------*/
+/*--------------------------------*/
+
+/*---Coeur vide---*/ 
+[id="likes_pages"]{ 
+    float: right;  
+    appearance: none; 
+} 
+
+[for="likes_pages"]{ 
+.no-like_pages { 
+    margin-right: 1em;
+    margin-top: 1.5em;
+    font-size: 1.5em; 
+    position: relative; 
+    z-index: 1; 
+} 
+.full-like_pages{ 
+    margin-top: -1.2em;
+    z-index: 2; 
+    opacity: 0; 
+    position: relative; 
+} 
+} 
+
+/*---Coeur plein---*/ 
+[id="likes_pages"]:checked +label{ 
+.no-like_pages{ 
+    @include empty-heart_animation;
+} 
+.full-like_pages{ 
+    @include full-heart_animation; 
+} 
+} 
+
 
 /*---Menus---*/
 
@@ -512,67 +574,180 @@ footer .icones_footer {
     justify-content: space-between;
 }
 
-
 .h2_pages, .h3_pages{
     text-align: start;
-    font-size: 1.1em;
+    font-size: 1.2em;
     margin-bottom: 0em;
     margin-top: 0.5em;
-    padding-left: 0.3em;
 }
 
 .h2_pages{
     font-weight: 100;
 }
 
+.h3_pages{
+    margin-top: 0em;
+    margin-bottom: 0.2em;
+}
+
+.h3_pages, .p_pages{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.p_pages{
+    margin: 0em;
+    font-size: 0.9em;
+}
+
 .line{
     width: 2.5em;
     border: solid $color-tertiary;
     margin: 0em;
-    margin-left: 0.5em;
+    margin-left: 0.1em;
     margin-bottom: 1.5em;
     margin-top: 0.5em;
 }
 
 .plats{
+    border-radius: 1em;
+    box-shadow: $box-shadow;
+    margin-bottom: 0.5em;
+    background-color: white;
+    height: 4em;
+    width: 100%; 
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+}
+
+.plats_description_prix{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-radius: 1em;
-    box-shadow: $box-shadow;
-    padding: 0.5em;
-    margin-bottom: 0.5em;
-    overflow: hidden;
-    background-color: white;   
+    align-items: center;
+    width: 100%;
 }
 
 .plats_description{
-    margin-right: 1em;
-    padding-left:0.3em;
-    width: 100%; 
-}
-
-.plats_description p{
-    margin-bottom:0.5em;
-    margin-top: 0.5em;
-    padding-left: 0.3em;
+    margin: 0.5em;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    z-index: 1;
 }
 
 .prix{
+    font-family: $roboto-cie;
+    font-size: 0.9em;
     font-weight: bold;
+    margin-right: 1em;
 }
 
-/*---Bouton de commande---*/
-.btn_pageannexe{
+/*--- Validation Plats---*/
+.validation{
+    right: 0em;
+    background-color: $color-tertiary;
+    border-radius: 0 1em 1em 0;
+    height: 4em;
+    width: 4em;
+    transform: scaleX(0);
+    transition: transform 2s;
+    display: none;
+}
+
+.fa-check-circle{
+    color:white;
+    font-size: 1.5em;
+    z-index: 1;
+    margin-top: 0.8em;
+    transform: translate(0.5em) rotate(0deg) scale(1);
+    transition: transform 2s;
+    display: none; 
+}
+
+[id="choix1"],
+[id="choix2"],
+[id="choix3"],
+[id="choix4"],
+[id="choix5"],
+[id="choix6"],
+[id="choix7"],
+[id="choix8"],
+[id="choix9"]{
+    appearance: none;
+}
+
+[for="choix1"],
+[for="choix2"],
+[for="choix3"],
+[for="choix4"],
+[for="choix5"],
+[for="choix6"],
+[for="choix7"],
+[for="choix8"],
+[for="choix9"]{
+    width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    align-items: center;
 }
-
 
   /*--------------------------------*/
  /*--- Animations Pages Annexes ---*/
 /*--------------------------------*/
-    
+/*--- Sélection des plats ---*/
+[id="choix1"]:checked + label,
+[id="choix2"]:checked + label,
+[id="choix3"]:checked + label,
+[id="choix4"]:checked + label,
+[id="choix5"]:checked + label,
+[id="choix6"]:checked + label,
+[id="choix7"]:checked + label,
+[id="choix8"]:checked + label,
+[id="choix9"]:checked + label{
+    .fa-check-circle{
+        display: block;
+        transform-origin: right;
+        animation: anim_check 1s;
+        transition: transform 1s ease-in;
+    }
+    .validation{
+        display: block;
+        animation: anim_choix 1s forwards;
+        transform-origin: right;
+        transition: transform 1s ease-in;
+    }
+    .prix{
+        transform: translate(-0.5em);
+        transform-origin: right;
+        transition: transform 1s ease-in;
+    }
+    .plats_description{
+        width: 65%;
+    }
+}
+
+@keyframes anim_check{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes anim_choix{
+    0%{
+        transform: scaleX(0);
+    }
+    100%{
+        transform: scaleX(1);
+    }
+}
+
 /*---Apparition des menus---*/
 .menu{
     margin-right: 1em;
@@ -583,19 +758,21 @@ footer .icones_footer {
 .entree{
     animation: menus 2s backwards;
     transition: 2s;
-
+    @include webkit_animation;
 }
 
 .pprincipal{
     animation: menus 2s backwards;
     transition: 2s;
     animation-delay: 1s;
+    @include webkit_animation;
 }
 
 .dessert{
     animation: menus 2s backwards;
     transition: 2s;
     animation-delay: 2s;
+    @include webkit_animation;
 }
 
 @keyframes menus{
@@ -609,72 +786,168 @@ footer .icones_footer {
     }
 }
 
-/*---Coche de sélection---*/
-
-.fa-check-circle{
-    color:white;
-    background-color: $color-tertiary;
-    height: fit-content;
-    font-size: 2em;
-    float: right;
+/*---Bouton de commande---*/
+.btn_pageannexe{
+    display: flex;
+    justify-content: center;
 }
 
-.plats{
-    &:active .prix_validation span{
-        transform: translate(-2em,0), rotate(360deg);
-    }
-    &:active .prix_validation{
-        transform: translate(-3em,0);
-    }
-    &:active .prix{
-        transform: translate(-3em, 0);
-    }
-    &:active .p_pages{
-        width: 65%;
-    }
-    &:active h3{
-        width: 65%;
-    }
-}
-
-.tarif{
-    transform-origin: 100% 0;
-    transition: transform 400ms ease-in-out;
-}
 
   /* ---------------------------------------------------------------- */
  /* ----------------------------RESPONSIVE-------------------------- */
 /* ---------------------------------------------------------------- */
- 
-  /* ---------------------------------------------------------------- */
- /* ------------------RESPONSIVE PETITE TABLETTE------------------- */ 
-/* ---------------------------------------------------------------- */
-@media only screen
-    and (min-width : 480px)
-    and (max-width: 540px){
-}
-
 
   /* ---------------------------------------------------------------- */
- /* -----------------------RESPONSIVE TABLETTE---------------------- */ 
+ /* ---------------------RESPONSIVE PETITS ECRANS------------------- */ 
 /* ---------------------------------------------------------------- */
-@media only screen
-   and (min-width : 541px)
-   and (max-width : 959px){
+@media screen and (min-width : 576px){
+
+/*--- Accueil ---*/
+/*--- Fonctionnement ---*/
+#section2 .liste_instructions{
+    padding-left: 10%;
 }
+
+#section2 .box{
+    width: 80%;
+}    
+
+/*--- Restaurants ---*/
+#liste_restaurants{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#articles .carte{
+    width: 80%;
+}
+
+/*--- Footer ---*/
+footer{
+    padding-top: 1.5em;
+}
+
+.liens_footer{
+    align-items: center;
+}
+
+footer h2{
+    text-align: center;
+}
+
+/*---Pages Annexes---*/ 
+.header_pages a:hover{
+    color: $color-tertiary;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.h2_pages, .line{
+    align-self: flex-start ;
+}
+
+.plats{
+    width: 80%;
+}
+
+}
+
+/* ---------------------------------------------------------------- */
+ /* -----------------------RESPONSIVE TABLETTE---------------------- */
+/* ---------------------------------------------------------------- */
+@media (min-width: 768px) { 
+
+/*---Accueil---*/
+/*---Fonctionnement---*/
+#section2 .liste_instructions{
+    padding-left: 30%;
+}
+
+#section2 .box{
+    width: 50%;
+}
+
+/*---Restaurants*/ 
+#liste_restaurants{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*---Pages Annexes---*/ 
+.header_pages a:active{
+    color: $color-tertiary;
+}
+
+.menu_complet{
+    align-items: center;
+}
+
+.menu{
+    width: 60%;
+}
+
+}
+
 
   /* ---------------------------------------------------------------- */
  /* ---------RESPONSIVE TABLETTE PAYSAGE ET PETITS ECRANS PC-------- */
 /* ---------------------------------------------------------------- */
-@media only screen
-  and (min-width : 960px)
-    and (max-width : 1280px){
+@media screen and (min-width : 962px){
+#section2 h2{
+    margin-left: 1.5em;
+}
+    
+#section2 .liste_instructions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 3%;
+    }
+    
+#section2 .box{
+    width: 100%;
+}
+
+#section2 p{
+    padding-right: 1em;
+}
+    
+/*---RESTAURANTS---*/
+#articles h2{
+    margin-left: 1.5em;
+}
+    
+#articles .carte{
+    width: 45%;
+    margin-bottom: 3em;
+    margin: 1em;
+    &:hover{
+        transform: scale(1.1);
+        transition: transform 1s;
+        }
+}
+    
+#liste_restaurants{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 2em;
+}
+
 }
 
  /* ---------------------------------------------------------------- */
  /* ----------------------RESPONSIVE DESKTOP------------------------ */
 /* ---------------------------------------------------------------- */
-@media screen and (min-width: 1281px){
+@media screen and (min-width: 1264px){
 
 /*---SECTION 2---*/
 
@@ -701,6 +974,10 @@ footer .icones_footer {
     width: 45%;
     margin-bottom: 3em;
     margin: 1em;
+    &:hover{
+        transform: scale(1.1);
+        transition: transform 1s;
+    }
 }
 
 #liste_restaurants{
@@ -708,6 +985,7 @@ footer .icones_footer {
     flex-direction: row;
     align-content: center;
     justify-content: space-around;
+    flex-wrap: wrap;
     margin: 2em;
 }
 
@@ -732,6 +1010,10 @@ footer h2{
     padding-right: 1em;
 }
 
+.header_pages a:hover{
+    color: $color-tertiary;
+}
+
 .h2_pages{
     padding-left: 0em;
 }
@@ -744,6 +1026,30 @@ footer h2{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.menu{
+    width: 30%;
+}
+
+.plats{
+    height: 4em;
+    &:hover{
+        transform: scale(1.1);
+        transition: transform 1s;
+    }
+}
+
+#section2 .liste_instructions{
+    padding-left: 10%;
+}
+
+#section2 .box{
+    width: 80%;
+}
+
+.instructions{
+    width: 100%;
 }
 
 }

@@ -4,3 +4,23 @@
     -ms-transition: 3s -ms-transform;
    -o-transition: 3s -o-transform;   
 }
+
+@mixin full-heart_animation{
+    opacity: 1;
+    z-index: 1;
+    position: relative;
+    animation: remplissage_coeur 2s;
+    transform-origin: bottom;
+    transition: transform 4s;
+    background: $linear-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@mixin empty-heart_animation{
+    z-index: 2;
+    animation: vanish_coeur 1s forwards;
+    transform-origin: center;
+    transition: 1s;
+}
