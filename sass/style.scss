@@ -53,7 +53,7 @@ footer h2, .logo{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.719) scroll no-repeat;
+    background: rgba(255, 255, 255, 0.76) scroll no-repeat;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -574,20 +574,18 @@ footer .icones_footer {
     justify-content: space-between;
 }
 
-.h2_pages, .h3_pages{
-    text-align: start;
-    font-size: 1.2em;
-    margin-bottom: 0em;
-    margin-top: 0.5em;
-}
-
 .h2_pages{
     font-weight: 100;
+    font-size: 1.1em;
+    margin-bottom: 0em;
+    margin-top: 0.5em;
 }
 
 .h3_pages{
     margin-top: 0em;
     margin-bottom: 0.2em;
+    font-size: 1em;
+    text-align: start;
 }
 
 .h3_pages, .p_pages{
@@ -628,9 +626,11 @@ footer .icones_footer {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin-right: 1em;
 }
 
 .plats_description{
+    width: 80%;
     margin: 0.5em;
     float: left;
     overflow: hidden;
@@ -641,9 +641,10 @@ footer .icones_footer {
 
 .prix{
     font-family: $roboto-cie;
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-weight: bold;
-    margin-right: 1em;
+    margin-top: 2em;
+    
 }
 
 /*--- Validation Plats---*/
@@ -652,7 +653,7 @@ footer .icones_footer {
     background-color: $color-tertiary;
     border-radius: 0 1em 1em 0;
     height: 4em;
-    width: 4em;
+    width: 3.5em;
     transform: scaleX(0);
     transition: transform 2s;
     display: none;
@@ -663,8 +664,7 @@ footer .icones_footer {
     font-size: 1.5em;
     z-index: 1;
     margin-top: 0.8em;
-    transform: translate(0.5em) rotate(0deg) scale(1);
-    transition: transform 2s;
+    padding-left: 0.5em;
     display: none; 
 }
 
@@ -676,7 +676,8 @@ footer .icones_footer {
 [id="choix6"],
 [id="choix7"],
 [id="choix8"],
-[id="choix9"]{
+[id="choix9"],
+[id="choix10"]{
     appearance: none;
 }
 
@@ -688,16 +689,19 @@ footer .icones_footer {
 [for="choix6"],
 [for="choix7"],
 [for="choix8"],
-[for="choix9"]{
+[for="choix9"],
+[for="choix10"]{
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
 }
 
   /*--------------------------------*/
  /*--- Animations Pages Annexes ---*/
 /*--------------------------------*/
+
 /*--- Sélection des plats ---*/
 [id="choix1"]:checked + label,
 [id="choix2"]:checked + label,
@@ -707,11 +711,12 @@ footer .icones_footer {
 [id="choix6"]:checked + label,
 [id="choix7"]:checked + label,
 [id="choix8"]:checked + label,
-[id="choix9"]:checked + label{
+[id="choix9"]:checked + label,
+[id="choix10"]:checked + label{
     .fa-check-circle{
         display: block;
-        transform-origin: right;
-        animation: anim_check 1s;
+        animation: rotation_check 1s forwards;
+        transform-origin: center;
         transition: transform 1s ease-in;
     }
     .validation{
@@ -720,24 +725,21 @@ footer .icones_footer {
         transform-origin: right;
         transition: transform 1s ease-in;
     }
-    .prix{
-        transform: translate(-0.5em);
-        transform-origin: right;
-        transition: transform 1s ease-in;
-    }
-    .plats_description{
-        width: 65%;
+    .plats_description_prix{
+        width: 75%;
+        transition: 1s;
     }
 }
 
-@keyframes anim_check{
+@keyframes rotation_check{
     0%{
-        transform: rotate(0deg);
+        transform: translate(0.5em) rotate(360deg);
     }
     100%{
-        transform: rotate(360deg);
+        transform: translate(-0em) rotate(0deg);
     }
 }
+
 
 @keyframes anim_choix{
     0%{
@@ -849,10 +851,6 @@ footer h2{
 
 .h2_pages, .line{
     align-self: flex-start ;
-}
-
-.plats{
-    width: 80%;
 }
 
 }
@@ -971,7 +969,7 @@ footer h2{
 }
 
 #articles .carte{
-    width: 45%;
+    width: 35%;
     margin-bottom: 3em;
     margin: 1em;
     &:hover{
@@ -984,7 +982,7 @@ footer h2{
     display: flex;
     flex-direction: row;
     align-content: center;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     margin: 2em;
 }
