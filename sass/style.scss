@@ -1,6 +1,6 @@
-  /*-------------------------------*/
- /*---------- VARIABLES ----------*/
-/*-------------------------------*/
+  /*----------------------------------------------------*/
+ /*---------- VARIABLES ET IMPORT LIBRAIRIES ----------*/
+/*----------------------------------------------------*/
 
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
@@ -15,6 +15,7 @@ $roboto-cie: Roboto, Arial, "Courier New", Verdana;
 $shrikhand-cie : Shrikhand, Arial, "Courier New", Verdana;
 
 @import "libs/mixins.scss";
+
 
   /* ---------------------------------------------------------------- */
  /* ----------------------------BODY-------------------------------- */
@@ -60,8 +61,6 @@ footer h2, .logo{
     z-index: 2;
     animation: loader 2s forwards;
     animation-delay: 4000ms;
-    @include webkit_animation;
-
 }
 
 @keyframes loader{
@@ -84,7 +83,6 @@ footer h2, .logo{
     border-color: $color-tertiary;
     font-size: 2em;
     animation: loader_txt 4s;
-    @include webkit_animation;
 }
 
 @keyframes loader_txt{
@@ -110,7 +108,6 @@ footer h2, .logo{
     padding: 0.4em;
     padding-right: 0.5em;
     animation: ustensils 3s infinite;
-    @include webkit_animation;
 }
 
 @keyframes ustensils{
@@ -374,6 +371,7 @@ h1, h3 {
     margin-top: -2em;
     position: relative;
     z-index: 1;
+    display: block;
 }
 .full-like{
     z-index: 2;
@@ -540,29 +538,30 @@ footer .icones_footer {
 } 
 
 [for="likes_pages"]{ 
-.no-like_pages { 
-    margin-right: 1em;
-    margin-top: 1.5em;
-    font-size: 1.5em; 
-    position: relative; 
-    z-index: 1; 
-} 
-.full-like_pages{ 
-    margin-top: -1.2em;
-    z-index: 2; 
-    opacity: 0; 
-    position: relative; 
-} 
+    .no-like_pages { 
+        margin-right: 1em;
+        margin-top: 1.3em;
+        font-size: 1.5em; 
+        position: relative; 
+        z-index: 1; 
+        display: block;
+    } 
+    .full-like_pages{ 
+        margin-top: -1.2em;
+        z-index: 2; 
+        opacity: 0; 
+        position: relative; 
+    } 
 } 
 
 /*---Coeur plein---*/ 
 [id="likes_pages"]:checked +label{ 
-.no-like_pages{ 
-    @include empty-heart_animation;
-} 
-.full-like_pages{ 
-    @include full-heart_animation; 
-} 
+    .no-like_pages{ 
+        @include empty-heart_animation;
+    } 
+    .full-like_pages{ 
+        @include full-heart_animation; 
+    } 
 } 
 
 
@@ -574,29 +573,12 @@ footer .icones_footer {
     justify-content: space-between;
 }
 
+/*--- Titres ---*/
 .h2_pages{
     font-weight: 100;
     font-size: 1.1em;
     margin-bottom: 0em;
     margin-top: 0.5em;
-}
-
-.h3_pages{
-    margin-top: 0em;
-    margin-bottom: 0.2em;
-    font-size: 1em;
-    text-align: start;
-}
-
-.h3_pages, .p_pages{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.p_pages{
-    margin: 0em;
-    font-size: 0.9em;
 }
 
 .line{
@@ -608,6 +590,7 @@ footer .icones_footer {
     margin-top: 0.5em;
 }
 
+/*--- Gestions des plats/menus ---*/
 .plats{
     border-radius: 1em;
     box-shadow: $box-shadow;
@@ -627,27 +610,43 @@ footer .icones_footer {
     align-items: center;
     width: 100%;
     margin-right: 1em;
-}
-
-.plats_description{
-    width: 80%;
-    margin: 0.5em;
-    float: left;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    z-index: 1;
-}
-
-.prix{
+    .plats_description{
+        width: 80%;
+        margin: 0.5em;
+        float: left;
+        z-index: 1;
+        display: block;
+        .h3_pages, .p_pages{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            text-align: start;
+            display: block;
+            font-family: $roboto-cie
+        }
+        .h3_pages{
+            margin-top: 0em;
+            margin-bottom: 0.2em;
+            font-size: 1em;
+            font-weight: bold;
+            
+        }
+        .p_pages{
+            margin: 0em;
+            font-size: 0.9em;
+        }
+    }
+    
+    .prix{
     font-family: $roboto-cie;
     font-size: 0.8em;
     font-weight: bold;
     margin-top: 2em;
     
+    }
 }
 
-/*--- Validation Plats---*/
+/*--- Animation Validation Plats---*/
 .validation{
     right: 0em;
     background-color: $color-tertiary;
@@ -657,15 +656,14 @@ footer .icones_footer {
     transform: scaleX(0);
     transition: transform 2s;
     display: none;
-}
-
-.fa-check-circle{
-    color:white;
-    font-size: 1.5em;
-    z-index: 1;
-    margin-top: 0.8em;
-    padding-left: 0.5em;
-    display: none; 
+    .fa-check-circle{
+        color:white;
+        font-size: 1.5em;
+        z-index: 1;
+        margin-top: 0.8em;
+        padding-left: 0.5em;
+        display: none; 
+    }
 }
 
 [id="choix1"],
@@ -725,9 +723,12 @@ footer .icones_footer {
         transform-origin: right;
         transition: transform 1s ease-in;
     }
+    .plats_description{
+        margin-right: -1em;
+    }
     .plats_description_prix{
         width: 75%;
-        transition: 1s;
+        margin-right: -1em;
     }
 }
 
@@ -755,26 +756,25 @@ footer .icones_footer {
     margin-right: 1em;
     margin-left: 1em;
     margin-bottom: 2.5em;
+    display: flex;
+    flex-direction: column;
 }
  
 .entree{
     animation: menus 2s backwards;
     transition: 2s;
-    @include webkit_animation;
 }
 
 .pprincipal{
     animation: menus 2s backwards;
     transition: 2s;
     animation-delay: 1s;
-    @include webkit_animation;
 }
 
 .dessert{
     animation: menus 2s backwards;
     transition: 2s;
     animation-delay: 2s;
-    @include webkit_animation;
 }
 
 @keyframes menus{
@@ -853,12 +853,27 @@ footer h2{
     align-self: flex-start ;
 }
 
+[id="choix1"]:checked + label,
+[id="choix2"]:checked + label,
+[id="choix3"]:checked + label,
+[id="choix4"]:checked + label,
+[id="choix5"]:checked + label,
+[id="choix6"]:checked + label,
+[id="choix7"]:checked + label,
+[id="choix8"]:checked + label,
+[id="choix9"]:checked + label,
+[id="choix10"]:checked + label{
+    .plats_description_prix{
+        width: 100%;
+    }
+}
+
 }
 
 /* ---------------------------------------------------------------- */
  /* -----------------------RESPONSIVE TABLETTE---------------------- */
 /* ---------------------------------------------------------------- */
-@media (min-width: 768px) { 
+@media screen and (min-width: 768px) { 
 
 /*---Accueil---*/
 /*---Fonctionnement---*/
@@ -1020,14 +1035,8 @@ footer h2{
     margin-left: 0em;
 }
 
-.menu_complet{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
 .menu{
-    width: 30%;
+    width: 40%;
 }
 
 .plats{

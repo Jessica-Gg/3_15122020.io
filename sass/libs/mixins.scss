@@ -1,8 +1,9 @@
-@mixin webkit_animation{
-    -webkit-transition: 3s -webkit-transform;      
-   -moz-transition: 3s -mos-transform;
-    -ms-transition: 3s -ms-transform;
-   -o-transition: 3s -o-transform;   
+/*--- Coeurs Vides/Pleins ---*/
+@mixin empty-heart_animation{
+    z-index: 2;
+    animation: vanish_coeur 1s forwards;
+    transform-origin: center;
+    transition: 1s;
 }
 
 @mixin full-heart_animation{
@@ -18,9 +19,3 @@
     background-clip: text;
 }
 
-@mixin empty-heart_animation{
-    z-index: 2;
-    animation: vanish_coeur 1s forwards;
-    transform-origin: center;
-    transition: 1s;
-}

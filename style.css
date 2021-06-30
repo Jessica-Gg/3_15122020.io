@@ -1,7 +1,8 @@
 @charset "UTF-8";
-/*-------------------------------*/
-/*---------- VARIABLES ----------*/
-/*-------------------------------*/
+/*----------------------------------------------------*/
+/*---------- VARIABLES ET IMPORT LIBRAIRIES ----------*/
+/*----------------------------------------------------*/
+/*--- Coeurs Vides/Pleins ---*/
 /* ---------------------------------------------------------------- */
 /* ----------------------------BODY-------------------------------- */
 /* -------------------site en mobile first (I8)-------------------- */
@@ -44,10 +45,6 @@ footer h2, .logo {
   z-index: 2;
   animation: loader 2s forwards;
   animation-delay: 4000ms;
-  -webkit-transition: 3s -webkit-transform;
-  -moz-transition: 3s -mos-transform;
-  -ms-transition: 3s -ms-transform;
-  -o-transition: 3s -o-transform;
 }
 
 @keyframes loader {
@@ -69,10 +66,6 @@ footer h2, .logo {
   border-color: #99E2D0;
   font-size: 2em;
   animation: loader_txt 4s;
-  -webkit-transition: 3s -webkit-transform;
-  -moz-transition: 3s -mos-transform;
-  -ms-transition: 3s -ms-transform;
-  -o-transition: 3s -o-transform;
 }
 
 @keyframes loader_txt {
@@ -97,10 +90,6 @@ footer h2, .logo {
   padding: 0.4em;
   padding-right: 0.5em;
   animation: ustensils 3s infinite;
-  -webkit-transition: 3s -webkit-transform;
-  -moz-transition: 3s -mos-transform;
-  -ms-transition: 3s -ms-transform;
-  -o-transition: 3s -o-transform;
 }
 
 @keyframes ustensils {
@@ -357,6 +346,7 @@ h1, h3 {
   margin-top: -2em;
   position: relative;
   z-index: 1;
+  display: block;
 }
 [for=likes] .full-like,
 [for=likes2] .full-like,
@@ -535,10 +525,11 @@ footer .icones_footer {
 
 [for=likes_pages] .no-like_pages {
   margin-right: 1em;
-  margin-top: 1.5em;
+  margin-top: 1.3em;
   font-size: 1.5em;
   position: relative;
   z-index: 1;
+  display: block;
 }
 [for=likes_pages] .full-like_pages {
   margin-top: -1.2em;
@@ -574,29 +565,12 @@ footer .icones_footer {
   justify-content: space-between;
 }
 
+/*--- Titres ---*/
 .h2_pages {
   font-weight: 100;
   font-size: 1.1em;
   margin-bottom: 0em;
   margin-top: 0.5em;
-}
-
-.h3_pages {
-  margin-top: 0em;
-  margin-bottom: 0.2em;
-  font-size: 1em;
-  text-align: start;
-}
-
-.h3_pages, .p_pages {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.p_pages {
-  margin: 0em;
-  font-size: 0.9em;
 }
 
 .line {
@@ -608,6 +582,7 @@ footer .icones_footer {
   margin-top: 0.5em;
 }
 
+/*--- Gestions des plats/menus ---*/
 .plats {
   border-radius: 1em;
   box-shadow: 0.1em 0.5em 1em #d4d4d4;
@@ -628,25 +603,39 @@ footer .icones_footer {
   width: 100%;
   margin-right: 1em;
 }
-
-.plats_description {
+.plats_description_prix .plats_description {
   width: 80%;
   margin: 0.5em;
   float: left;
+  z-index: 1;
+  display: block;
+}
+.plats_description_prix .plats_description .h3_pages, .plats_description_prix .plats_description .p_pages {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  z-index: 1;
+  text-align: start;
+  display: block;
+  font-family: Roboto, Arial, "Courier New", Verdana;
 }
-
-.prix {
+.plats_description_prix .plats_description .h3_pages {
+  margin-top: 0em;
+  margin-bottom: 0.2em;
+  font-size: 1em;
+  font-weight: bold;
+}
+.plats_description_prix .plats_description .p_pages {
+  margin: 0em;
+  font-size: 0.9em;
+}
+.plats_description_prix .prix {
   font-family: Roboto, Arial, "Courier New", Verdana;
   font-size: 0.8em;
   font-weight: bold;
   margin-top: 2em;
 }
 
-/*--- Validation Plats---*/
+/*--- Animation Validation Plats---*/
 .validation {
   right: 0em;
   background-color: #99E2D0;
@@ -657,8 +646,7 @@ footer .icones_footer {
   transition: transform 2s;
   display: none;
 }
-
-.fa-check-circle {
+.validation .fa-check-circle {
   color: white;
   font-size: 1.5em;
   z-index: 1;
@@ -731,6 +719,18 @@ footer .icones_footer {
   transform-origin: right;
   transition: transform 1s ease-in;
 }
+[id=choix1]:checked + label .plats_description,
+[id=choix2]:checked + label .plats_description,
+[id=choix3]:checked + label .plats_description,
+[id=choix4]:checked + label .plats_description,
+[id=choix5]:checked + label .plats_description,
+[id=choix6]:checked + label .plats_description,
+[id=choix7]:checked + label .plats_description,
+[id=choix8]:checked + label .plats_description,
+[id=choix9]:checked + label .plats_description,
+[id=choix10]:checked + label .plats_description {
+  margin-right: -1em;
+}
 [id=choix1]:checked + label .plats_description_prix,
 [id=choix2]:checked + label .plats_description_prix,
 [id=choix3]:checked + label .plats_description_prix,
@@ -742,7 +742,7 @@ footer .icones_footer {
 [id=choix9]:checked + label .plats_description_prix,
 [id=choix10]:checked + label .plats_description_prix {
   width: 75%;
-  transition: 1s;
+  margin-right: -1em;
 }
 
 @keyframes rotation_check {
@@ -766,35 +766,25 @@ footer .icones_footer {
   margin-right: 1em;
   margin-left: 1em;
   margin-bottom: 2.5em;
+  display: flex;
+  flex-direction: column;
 }
 
 .entree {
   animation: menus 2s backwards;
   transition: 2s;
-  -webkit-transition: 3s -webkit-transform;
-  -moz-transition: 3s -mos-transform;
-  -ms-transition: 3s -ms-transform;
-  -o-transition: 3s -o-transform;
 }
 
 .pprincipal {
   animation: menus 2s backwards;
   transition: 2s;
   animation-delay: 1s;
-  -webkit-transition: 3s -webkit-transform;
-  -moz-transition: 3s -mos-transform;
-  -ms-transition: 3s -ms-transform;
-  -o-transition: 3s -o-transform;
 }
 
 .dessert {
   animation: menus 2s backwards;
   transition: 2s;
   animation-delay: 2s;
-  -webkit-transition: 3s -webkit-transform;
-  -moz-transition: 3s -mos-transform;
-  -ms-transition: 3s -ms-transform;
-  -o-transition: 3s -o-transform;
 }
 
 @keyframes menus {
@@ -868,11 +858,24 @@ footer .icones_footer {
   .h2_pages, .line {
     align-self: flex-start;
   }
+
+  [id=choix1]:checked + label .plats_description_prix,
+[id=choix2]:checked + label .plats_description_prix,
+[id=choix3]:checked + label .plats_description_prix,
+[id=choix4]:checked + label .plats_description_prix,
+[id=choix5]:checked + label .plats_description_prix,
+[id=choix6]:checked + label .plats_description_prix,
+[id=choix7]:checked + label .plats_description_prix,
+[id=choix8]:checked + label .plats_description_prix,
+[id=choix9]:checked + label .plats_description_prix,
+[id=choix10]:checked + label .plats_description_prix {
+    width: 100%;
+  }
 }
 /* ---------------------------------------------------------------- */
 /* -----------------------RESPONSIVE TABLETTE---------------------- */
 /* ---------------------------------------------------------------- */
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   /*---Accueil---*/
   /*---Fonctionnement---*/
   #section2 .liste_instructions {
@@ -1024,14 +1027,8 @@ footer .icones_footer {
     margin-left: 0em;
   }
 
-  .menu_complet {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
   .menu {
-    width: 30%;
+    width: 40%;
   }
 
   .plats {
