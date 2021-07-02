@@ -727,7 +727,7 @@ footer .icones_footer {
         margin-right: -1em;
     }
     .plats_description_prix{
-        width: 75%;
+        width: 80%;
         margin-right: -1em;
     }
 }
@@ -853,6 +853,7 @@ footer h2{
     align-self: flex-start ;
 }
 
+/*--- Ajustement animation de validation des plats ---*/
 [id="choix1"]:checked + label,
 [id="choix2"]:checked + label,
 [id="choix3"]:checked + label,
@@ -864,7 +865,7 @@ footer h2{
 [id="choix9"]:checked + label,
 [id="choix10"]:checked + label{
     .plats_description_prix{
-        width: 100%;
+        width: 80%;
     }
 }
 
@@ -903,6 +904,22 @@ footer h2{
 
 .menu{
     width: 60%;
+}
+
+/*--- Ajustement animation de validation des plats ---*/
+[id="choix1"]:checked + label,
+[id="choix2"]:checked + label,
+[id="choix3"]:checked + label,
+[id="choix4"]:checked + label,
+[id="choix5"]:checked + label,
+[id="choix6"]:checked + label,
+[id="choix7"]:checked + label,
+[id="choix8"]:checked + label,
+[id="choix9"]:checked + label,
+[id="choix10"]:checked + label{
+    .plats_description_prix{
+        width: 85%;
+    }
 }
 
 }

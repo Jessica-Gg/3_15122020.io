@@ -741,7 +741,7 @@ footer .icones_footer {
 [id=choix8]:checked + label .plats_description_prix,
 [id=choix9]:checked + label .plats_description_prix,
 [id=choix10]:checked + label .plats_description_prix {
-  width: 75%;
+  width: 80%;
   margin-right: -1em;
 }
 
@@ -859,6 +859,7 @@ footer .icones_footer {
     align-self: flex-start;
   }
 
+  /*--- Ajustement animation de validation des plats ---*/
   [id=choix1]:checked + label .plats_description_prix,
 [id=choix2]:checked + label .plats_description_prix,
 [id=choix3]:checked + label .plats_description_prix,
@@ -869,7 +870,7 @@ footer .icones_footer {
 [id=choix8]:checked + label .plats_description_prix,
 [id=choix9]:checked + label .plats_description_prix,
 [id=choix10]:checked + label .plats_description_prix {
-    width: 100%;
+    width: 80%;
   }
 }
 /* ---------------------------------------------------------------- */
@@ -904,6 +905,20 @@ footer .icones_footer {
 
   .menu {
     width: 60%;
+  }
+
+  /*--- Ajustement animation de validation des plats ---*/
+  [id=choix1]:checked + label .plats_description_prix,
+[id=choix2]:checked + label .plats_description_prix,
+[id=choix3]:checked + label .plats_description_prix,
+[id=choix4]:checked + label .plats_description_prix,
+[id=choix5]:checked + label .plats_description_prix,
+[id=choix6]:checked + label .plats_description_prix,
+[id=choix7]:checked + label .plats_description_prix,
+[id=choix8]:checked + label .plats_description_prix,
+[id=choix9]:checked + label .plats_description_prix,
+[id=choix10]:checked + label .plats_description_prix {
+    width: 85%;
   }
 }
 /* ---------------------------------------------------------------- */
