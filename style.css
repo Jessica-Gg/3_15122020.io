@@ -657,7 +657,7 @@ footer .icones_footer {
 }
 .plats_description_prix .plats_description .p_pages {
   margin: 0em;
-  font-size: 0.9em;
+  font-size: 0.84em;
 }
 .plats_description_prix .prix {
   font-family: Roboto, Arial, "Courier New", Verdana;
@@ -845,15 +845,6 @@ footer .icones_footer {
 /* ---------------------------------------------------------------- */
 /* ----------------------------RESPONSIVE-------------------------- */
 /* ---------------------------------------------------------------- */
-/* ---------------------------------------------------------------- */
-/* -----------RESPONSIVE PETITS ECRANS DE TELEPHONE (<I8)---------- */
-/* ---------------------------------------------------------------- */
-@media screen and (max-width: 374px) {
-  /*---Pages Annexes---*/
-  .p_pages {
-    font-size: 0.84em;
-  }
-}
 /* ---------------------------------------------------------------- */
 /* ---------------------RESPONSIVE PETITS ECRANS------------------- */
 /* ---------------------------------------------------------------- */
