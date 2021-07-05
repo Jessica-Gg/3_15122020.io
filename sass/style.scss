@@ -827,20 +827,9 @@ footer .icones_footer {
 /* ---------------------------------------------------------------- */
 
 @media screen and (max-width: 374px){
-    /*--- Ajustement animation de validation des plats ---*/
-[id="choix1"]:checked + label,
-[id="choix2"]:checked + label,
-[id="choix3"]:checked + label,
-[id="choix4"]:checked + label,
-[id="choix5"]:checked + label,
-[id="choix6"]:checked + label,
-[id="choix7"]:checked + label,
-[id="choix8"]:checked + label,
-[id="choix9"]:checked + label,
-[id="choix10"]:checked + label{
-    .plats_description_prix{
-        width: 75%;
-    }
+/*---Pages Annexes---*/ 
+.p_pages{
+    font-size: 0.84em;
 }
 }
 

@@ -849,18 +849,9 @@ footer .icones_footer {
 /* -----------RESPONSIVE PETITS ECRANS DE TELEPHONE (<I8)---------- */
 /* ---------------------------------------------------------------- */
 @media screen and (max-width: 374px) {
-  /*--- Ajustement animation de validation des plats ---*/
-  [id=choix1]:checked + label .plats_description_prix,
-[id=choix2]:checked + label .plats_description_prix,
-[id=choix3]:checked + label .plats_description_prix,
-[id=choix4]:checked + label .plats_description_prix,
-[id=choix5]:checked + label .plats_description_prix,
-[id=choix6]:checked + label .plats_description_prix,
-[id=choix7]:checked + label .plats_description_prix,
-[id=choix8]:checked + label .plats_description_prix,
-[id=choix9]:checked + label .plats_description_prix,
-[id=choix10]:checked + label .plats_description_prix {
-    width: 75%;
+  /*---Pages Annexes---*/
+  .p_pages {
+    font-size: 0.84em;
   }
 }
 /* ---------------------------------------------------------------- */
