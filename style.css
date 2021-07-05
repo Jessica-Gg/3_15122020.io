@@ -45,6 +45,11 @@ footer h2, .logo {
   z-index: 2;
   animation: loader 2s forwards;
   animation-delay: 4000ms;
+  -webkit-transition: 2s -webkit-transform;
+  -moz-transition: 2s -mos-transform;
+  -ms-transition: 2s -ms-transform;
+  -o-transition: 2s -o-transform;
+  transition: 2s transform;
 }
 
 @keyframes loader {
@@ -66,6 +71,11 @@ footer h2, .logo {
   border-color: #99E2D0;
   font-size: 2em;
   animation: loader_txt 4s;
+  -webkit-transition: 4s -webkit-transform;
+  -moz-transition: 4s -mos-transform;
+  -ms-transition: 4s -ms-transform;
+  -o-transition: 4s -o-transform;
+  transition: 4s transform;
 }
 
 @keyframes loader_txt {
@@ -89,7 +99,12 @@ footer h2, .logo {
   border-radius: 1.5em;
   padding: 0.4em;
   padding-right: 0.5em;
-  animation: ustensils 3s infinite;
+  animation: ustensils 4s infinite;
+  -webkit-transition: 4s -webkit-transform;
+  -moz-transition: 4s -mos-transform;
+  -ms-transition: 4s -ms-transform;
+  -o-transition: 4s -o-transform;
+  transition: 4s transform;
 }
 
 @keyframes ustensils {
@@ -365,7 +380,11 @@ h1, h3 {
   z-index: 2;
   animation: vanish_coeur 1s forwards;
   transform-origin: center;
-  transition: 1s;
+  transition: transform 1s;
+  -webkit-transition: 1s -webkit-transform;
+  -moz-transition: 1s -mos-transform;
+  -ms-transition: 1s -ms-transform;
+  -o-transition: 1s -o-transform;
 }
 [id=likes]:checked + label .full-like,
 [id=likes2]:checked + label .full-like,
@@ -381,6 +400,10 @@ h1, h3 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  -webkit-transition: 4s -webkit-transform;
+  -moz-transition: 4s -mos-transform;
+  -ms-transition: 4s -ms-transform;
+  -o-transition: 4s -o-transform;
 }
 
 @keyframes vanish_coeur {
@@ -543,7 +566,11 @@ footer .icones_footer {
   z-index: 2;
   animation: vanish_coeur 1s forwards;
   transform-origin: center;
-  transition: 1s;
+  transition: transform 1s;
+  -webkit-transition: 1s -webkit-transform;
+  -moz-transition: 1s -mos-transform;
+  -ms-transition: 1s -ms-transform;
+  -o-transition: 1s -o-transform;
 }
 [id=likes_pages]:checked + label .full-like_pages {
   opacity: 1;
@@ -556,6 +583,10 @@ footer .icones_footer {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  -webkit-transition: 4s -webkit-transform;
+  -moz-transition: 4s -mos-transform;
+  -ms-transition: 4s -ms-transform;
+  -o-transition: 4s -o-transform;
 }
 
 /*---Menus---*/
@@ -703,6 +734,10 @@ footer .icones_footer {
   animation: rotation_check 1s forwards;
   transform-origin: center;
   transition: transform 1s ease-in;
+  -webkit-transition: 1s -webkit-transform;
+  -moz-transition: 1s -mos-transform;
+  -ms-transition: 1s -ms-transform;
+  -o-transition: 1s -o-transform;
 }
 [id=choix1]:checked + label .validation,
 [id=choix2]:checked + label .validation,
@@ -718,6 +753,10 @@ footer .icones_footer {
   animation: anim_choix 1s forwards;
   transform-origin: right;
   transition: transform 1s ease-in;
+  -webkit-transition: 1s -webkit-transform;
+  -moz-transition: 1s -mos-transform;
+  -ms-transition: 1s -ms-transform;
+  -o-transition: 1s -o-transform;
 }
 [id=choix1]:checked + label .plats_description,
 [id=choix2]:checked + label .plats_description,
@@ -806,6 +845,24 @@ footer .icones_footer {
 /* ---------------------------------------------------------------- */
 /* ----------------------------RESPONSIVE-------------------------- */
 /* ---------------------------------------------------------------- */
+/* ---------------------------------------------------------------- */
+/* -----------RESPONSIVE PETITS ECRANS DE TELEPHONE (<I8)---------- */
+/* ---------------------------------------------------------------- */
+@media screen and (max-width: 374px) {
+  /*--- Ajustement animation de validation des plats ---*/
+  [id=choix1]:checked + label .plats_description_prix,
+[id=choix2]:checked + label .plats_description_prix,
+[id=choix3]:checked + label .plats_description_prix,
+[id=choix4]:checked + label .plats_description_prix,
+[id=choix5]:checked + label .plats_description_prix,
+[id=choix6]:checked + label .plats_description_prix,
+[id=choix7]:checked + label .plats_description_prix,
+[id=choix8]:checked + label .plats_description_prix,
+[id=choix9]:checked + label .plats_description_prix,
+[id=choix10]:checked + label .plats_description_prix {
+    width: 75%;
+  }
+}
 /* ---------------------------------------------------------------- */
 /* ---------------------RESPONSIVE PETITS ECRANS------------------- */
 /* ---------------------------------------------------------------- */

@@ -3,7 +3,11 @@
     z-index: 2;
     animation: vanish_coeur 1s forwards;
     transform-origin: center;
-    transition: 1s;
+    transition: transform 1s;
+    -webkit-transition: 1s -webkit-transform;      
+    -moz-transition: 1s -mos-transform;
+     -ms-transition: 1s -ms-transform;
+    -o-transition: 1s -o-transform;   
 }
 
 @mixin full-heart_animation{
@@ -17,5 +21,9 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-transition: 4s -webkit-transform;      
+    -moz-transition: 4s -mos-transform;
+     -ms-transition: 4s -ms-transform;
+    -o-transition: 4s -o-transform;   
 }
 
