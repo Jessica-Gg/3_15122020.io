@@ -38,7 +38,7 @@ footer h2, .logo {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.76) scroll no-repeat;
+  background: rgba(255, 255, 255, 0.76);
   width: 100%;
   height: 100%;
   position: absolute;
@@ -248,12 +248,13 @@ header .logo {
   padding: 0.8em;
   width: 100%;
 }
-#section2 .box:hover {
-  background-color: #5b3a8321;
-}
 
 #section2 > div > div:nth-child(3) > div > i {
   color: #9356DC;
+}
+
+#section2 > div > div:nth-child(3) > div {
+  background-color: #e9def7de;
 }
 
 /* ---------------------------------------------------------------- */
@@ -343,6 +344,7 @@ header .logo {
   position: relative;
   z-index: 1;
   display: block;
+  padding-right: 0.1em;
 }
 [for=likes] .full-like,
 [for=likes2] .full-like,
@@ -992,8 +994,15 @@ footer .icones_footer {
   #section2 .box {
     width: 80%;
   }
+  #section2 .box:hover {
+    background-color: #e9def7de;
+  }
   #section2 .instructions {
     width: 80%;
+  }
+
+  #section2 > div > div:nth-child(3) > div {
+    background-color: #f7f6f6;
   }
 
   /*---RESTAURANTS---*/
