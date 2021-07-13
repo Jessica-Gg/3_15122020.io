@@ -258,6 +258,7 @@ header {
         display: flex;
         flex-direction: row;
         margin-bottom: 1.5em;
+        max-width: 30em;
     }
     .box {
         box-shadow: $box-shadow;
@@ -703,30 +704,30 @@ footer {
 [id="choix10"]:checked + label{
     .fa-check-circle{
         display: block;
-        animation: rotation_check 1s forwards;
+        animation: rotation_check 1s ;
         transform-origin: center;
         transition: transform 1s ease-in;
-        -webkit-transition: 1s -webkit-transform;      
-        -moz-transition: 1s -mos-transform;
-         -ms-transition: 1s -ms-transform;
-        -o-transition: 1s -o-transform; 
+        -webkit-transition: 2s -webkit-transform;      
+        -moz-transition: 2s -mos-transform;
+         -ms-transition: 2s -ms-transform;
+        -o-transition: 2s -o-transform; 
     }
     .validation{
         display: block;
         animation: anim_choix 1s forwards;
         transform-origin: right;
         transition: transform 1s ease-in;
-        -webkit-transition: 1s -webkit-transform;      
-        -moz-transition: 1s -mos-transform;
-         -ms-transition: 1s -ms-transform;
-        -o-transition: 1s -o-transform; 
+        -webkit-transition: 2s -webkit-transform;      
+        -moz-transition: 2s -mos-transform;
+         -ms-transition: 2s -ms-transform;
+        -o-transition: 2s -o-transform; 
     }
-    .plats_description{
-        margin-right: -1em;
+    .prix{
+        transform: translate(-0.5em);
+        transition: transform 1s;
     }
     .plats_description_prix{
         width: 80%;
-        margin-right: -1em;
     }
 }
 
@@ -747,6 +748,61 @@ footer {
         transform: scaleX(1);
     }
 }
+
+[id="choix1"]:not(:checked) + label,
+[id="choix2"]:not(:checked) + label,
+[id="choix3"]:not(:checked) + label,
+[id="choix4"]:not(:checked) + label,
+[id="choix5"]:not(:checked) + label,
+[id="choix6"]:not(:checked) + label,
+[id="choix7"]:not(:checked) + label,
+[id="choix8"]:not(:checked) + label,
+[id="choix9"]:not(:checked) + label,
+[id="choix10"]:not(:checked) + label{
+    .fa-check-circle{
+        display: block;
+        animation: rotation_uncheck 1s ;
+        transform-origin: center;
+        transition: transform 1s ease-in;
+        -webkit-transition: 2s -webkit-transform;      
+        -moz-transition: 2s -mos-transform;
+         -ms-transition: 2s -ms-transform;
+        -o-transition: 2s -o-transform; 
+    }
+    .validation{
+        display: block;
+        animation: anim_choix_unchek 1s forwards;
+        transform-origin: right;
+        transition: transform 1s ease-in;
+        -webkit-transition: 2s -webkit-transform;      
+        -moz-transition: 2s -mos-transform;
+         -ms-transition: 2s -ms-transform;
+        -o-transition: 2s -o-transform; 
+    }
+    .prix{
+        transform: translate(2em);
+        transition: transform 1s;
+    }
+}
+
+@keyframes rotation_uncheck{
+    0%{
+        transform: translate(0em) rotate(0deg);
+    }
+    100%{
+        transform: translate(0.5em) rotate(360deg);
+    }
+}
+
+@keyframes anim_choix_unchek{
+    0%{
+        transform: scaleX(1);
+    }
+    100%{
+        transform: scaleX(0);
+    }
+}
+
 
 /*---Apparition des menus---*/
 .menu{
@@ -1040,8 +1096,8 @@ footer{
 
 /*---PAGES ANNEXES---*/
 .titre_pages{
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 25%;
+    padding-right: 25%;
 }
 
 .header_pages a:hover{
@@ -1068,3 +1124,14 @@ footer{
     }
 }
 }
+
+  /* ---------------------------------------------------------------- */
+ /* ----------------RESPONSIVE DESKTOP GRAND ECRAN------------------ */
+/* ---------------------------------------------------------------- */
+@media screen and (min-width: 1800px){
+    #section2, #articles{
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+
+    }
