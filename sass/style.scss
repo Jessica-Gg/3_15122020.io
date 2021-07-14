@@ -724,6 +724,7 @@ footer {
     }
     .prix{
         transform: translate(-1em);
+        -moz-transform : translate(-1em);
         transition: transform 1s;
         -webkit-transition: 1s -webkit-transform;      
         -moz-transition: 1s -mos-transform;
@@ -786,6 +787,7 @@ footer {
     }
     .prix{
         transform: translate(2em);
+        -moz-transform : translate(2em);
         transition: transform 1s;
         -webkit-transition: 1s -webkit-transform;      
         -moz-transition: 1s -mos-transform;
