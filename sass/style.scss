@@ -707,24 +707,28 @@ footer {
         animation: rotation_check 1s ;
         transform-origin: center;
         transition: transform 1s ease-in;
-        -webkit-transition: 2s -webkit-transform;      
-        -moz-transition: 2s -mos-transform;
-         -ms-transition: 2s -ms-transform;
-        -o-transition: 2s -o-transform; 
+        -webkit-transition: 1s -webkit-transform;      
+        -moz-transition: 1s -mos-transform;
+         -ms-transition: 1s -ms-transform;
+        -o-transition: 1s -o-transform; 
     }
     .validation{
         display: block;
         animation: anim_choix 1s forwards;
         transform-origin: right;
         transition: transform 1s ease-in;
-        -webkit-transition: 2s -webkit-transform;      
-        -moz-transition: 2s -mos-transform;
-         -ms-transition: 2s -ms-transform;
-        -o-transition: 2s -o-transform; 
+        -webkit-transition: 1s -webkit-transform;      
+        -moz-transition: 1s -mos-transform;
+         -ms-transition: 1s -ms-transform;
+        -o-transition: 1s -o-transform; 
     }
     .prix{
-        transform: translate(-0.5em);
+        transform: translate(-1em);
         transition: transform 1s;
+        -webkit-transition: 1s -webkit-transform;      
+        -moz-transition: 1s -mos-transform;
+         -ms-transition: 1s -ms-transform;
+        -o-transition: 1s -o-transform; 
     }
     .plats_description_prix{
         width: 80%;
@@ -748,6 +752,7 @@ footer {
         transform: scaleX(1);
     }
 }
+
 
 [id="choix1"]:not(:checked) + label,
 [id="choix2"]:not(:checked) + label,
@@ -782,6 +787,10 @@ footer {
     .prix{
         transform: translate(2em);
         transition: transform 1s;
+        -webkit-transition: 1s -webkit-transform;      
+        -moz-transition: 1s -mos-transform;
+         -ms-transition: 1s -ms-transform;
+        -o-transition: 1s -o-transform; 
     }
 }
 

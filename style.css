@@ -704,10 +704,10 @@ footer .icones_footer {
   animation: rotation_check 1s;
   transform-origin: center;
   transition: transform 1s ease-in;
-  -webkit-transition: 2s -webkit-transform;
-  -moz-transition: 2s -mos-transform;
-  -ms-transition: 2s -ms-transform;
-  -o-transition: 2s -o-transform;
+  -webkit-transition: 1s -webkit-transform;
+  -moz-transition: 1s -mos-transform;
+  -ms-transition: 1s -ms-transform;
+  -o-transition: 1s -o-transform;
 }
 [id=choix1]:checked + label .validation,
 [id=choix2]:checked + label .validation,
@@ -723,10 +723,10 @@ footer .icones_footer {
   animation: anim_choix 1s forwards;
   transform-origin: right;
   transition: transform 1s ease-in;
-  -webkit-transition: 2s -webkit-transform;
-  -moz-transition: 2s -mos-transform;
-  -ms-transition: 2s -ms-transform;
-  -o-transition: 2s -o-transform;
+  -webkit-transition: 1s -webkit-transform;
+  -moz-transition: 1s -mos-transform;
+  -ms-transition: 1s -ms-transform;
+  -o-transition: 1s -o-transform;
 }
 [id=choix1]:checked + label .prix,
 [id=choix2]:checked + label .prix,
@@ -738,8 +738,12 @@ footer .icones_footer {
 [id=choix8]:checked + label .prix,
 [id=choix9]:checked + label .prix,
 [id=choix10]:checked + label .prix {
-  transform: translate(-0.5em);
+  transform: translate(-1em);
   transition: transform 1s;
+  -webkit-transition: 1s -webkit-transform;
+  -moz-transition: 1s -mos-transform;
+  -ms-transition: 1s -ms-transform;
+  -o-transition: 1s -o-transform;
 }
 [id=choix1]:checked + label .plats_description_prix,
 [id=choix2]:checked + label .plats_description_prix,
@@ -820,6 +824,10 @@ footer .icones_footer {
 [id=choix10]:not(:checked) + label .prix {
   transform: translate(2em);
   transition: transform 1s;
+  -webkit-transition: 1s -webkit-transform;
+  -moz-transition: 1s -mos-transform;
+  -ms-transition: 1s -ms-transform;
+  -o-transition: 1s -o-transform;
 }
 
 @keyframes rotation_uncheck {
