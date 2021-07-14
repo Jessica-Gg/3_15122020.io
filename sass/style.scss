@@ -61,10 +61,10 @@ footer h2, .logo{
     z-index: 2;
     animation: loader 2s forwards;
     animation-delay: 4000ms;
-    -webkit-transition: 2s -webkit-transform;      
-   -moz-transition: 2s -mos-transform;
-    -ms-transition: 2s -ms-transform;
-   -o-transition: 2s -o-transform;   
+    -webkit-transition: 2s -webkit- transform;      
+   -moz-transition: 2s -mos- transform;
+    -ms-transition: 2s -ms- transform;
+   -o-transition: 2s -o- transform;   
    transition: 2s transform;
    .loader_txt{
         font-family: $shrikhand-cie;
@@ -75,10 +75,10 @@ footer h2, .logo{
         border-color: $color-tertiary;
         font-size: 2em;
         animation: loader_txt 4s;
-        -webkit-transition: 4s -webkit-transform;      
-        -moz-transition: 4s -mos-transform;
-        -ms-transition: 4s -ms-transform;
-        -o-transition: 4s -o-transform;   
+        -webkit-transition: 4s -webkit- transform;      
+        -moz-transition: 4s -mos- transform;
+        -ms-transition: 4s -ms- transform;
+        -o-transition: 4s -o- transform;   
         transition: 4s transform;
     }
     .fa-utensils{
@@ -93,10 +93,10 @@ footer h2, .logo{
         padding: 0.4em;
         padding-right: 0.5em;
         animation: ustensils 4s infinite;
-        -webkit-transition: 4s -webkit-transform;      
-        -moz-transition: 4s -mos-transform;
-         -ms-transition: 4s -ms-transform;
-        -o-transition: 4s -o-transform;   
+        -webkit-transition: 4s -webkit- transform;      
+        -moz-transition: 4s -mos- transform;
+         -ms-transition: 4s -ms- transform;
+        -o-transition: 4s -o- transform;   
         transition: 4s transform;
     }
 }
@@ -707,29 +707,29 @@ footer {
         animation: rotation_check 1s ;
         transform-origin: center;
         transition: transform 1s ease-in;
-        -webkit-transition: 1s -webkit-transform;      
-        -moz-transition: 1s -mos-transform;
-         -ms-transition: 1s -ms-transform;
-        -o-transition: 1s -o-transform; 
+        -webkit-transition: 1s -webkit- transform;      
+        -moz-transition: 1s -mos- transform;
+         -ms-transition: 1s -ms- transform;
+        -o-transition: 1s -o- transform; 
     }
     .validation{
         display: block;
         animation: anim_choix 1s forwards;
         transform-origin: right;
         transition: transform 1s ease-in;
-        -webkit-transition: 1s -webkit-transform;      
-        -moz-transition: 1s -mos-transform;
-         -ms-transition: 1s -ms-transform;
-        -o-transition: 1s -o-transform; 
+        -webkit-transition: 1s -webkit- transform;      
+        -moz-transition: 1s -mos- transform;
+         -ms-transition: 1s -ms- transform;
+        -o-transition: 1s -o- transform; 
     }
     .prix{
         transform: translate(-1em);
         -moz-transform : translate(-1em);
-        transition: transform 1s;
-        -webkit-transition: 1s -webkit-transform;      
-        -moz-transition: 1s -mos-transform;
-         -ms-transition: 1s -ms-transform;
-        -o-transition: 1s -o-transform; 
+        transition: transform 1s; 
+        -webkit-transition: 1s -webkit- transform;      
+        -moz-transition: 1s -mos- transform;
+         -ms-transition: 1s -ms- transform;
+        -o-transition: 1s -o- transform; 
     }
     .plats_description_prix{
         width: 80%;
@@ -770,29 +770,29 @@ footer {
         animation: rotation_uncheck 1s ;
         transform-origin: center;
         transition: transform 1s ease-in;
-        -webkit-transition: 2s -webkit-transform;      
-        -moz-transition: 2s -mos-transform;
-         -ms-transition: 2s -ms-transform;
-        -o-transition: 2s -o-transform; 
+        -webkit-transition: 2s -webkit- transform;      
+        -moz-transition: 2s -mos- transform;
+         -ms-transition: 2s -ms- transform;
+        -o-transition: 2s -o- transform; 
     }
     .validation{
         display: block;
         animation: anim_choix_unchek 1s forwards;
         transform-origin: right;
         transition: transform 1s ease-in;
-        -webkit-transition: 2s -webkit-transform;      
-        -moz-transition: 2s -mos-transform;
-         -ms-transition: 2s -ms-transform;
-        -o-transition: 2s -o-transform; 
+        -webkit-transition: 2s -webkit- transform;      
+        -moz-transition: 2s -mos- transform;
+         -ms-transition: 2s -ms- transform;
+        -o-transition: 2s -o- transform; 
     }
     .prix{
         transform: translate(2em);
         -moz-transform : translate(2em);
         transition: transform 1s;
-        -webkit-transition: 1s -webkit-transform;      
-        -moz-transition: 1s -mos-transform;
-         -ms-transition: 1s -ms-transform;
-        -o-transition: 1s -o-transform; 
+        -webkit-transition: 1s -webkit- transform;      
+        -moz-transition: 1s -mos- transform;
+         -ms-transition: 1s -ms- transform;
+        -o-transition: 1s -o- transform; 
     }
 }
 
